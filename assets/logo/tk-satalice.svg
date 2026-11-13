@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Tenisový klub Satalice">
+  <defs>
+    <path id="oblouk-nahore" d="M 27 100 A 73 73 0 0 1 173 100"/>
+    <path id="oblouk-dole" d="M 12.5 100 A 87.5 87.5 0 0 0 187.5 100"/>
+    <clipPath id="stred"><circle cx="100" cy="100" r="60"/></clipPath>
+    <g id="raketa" fill="none" stroke="#fff" stroke-linecap="round">
+      <ellipse cx="0" cy="-35" rx="16" ry="20.5" stroke-width="3.2"/>
+      <g stroke-width=".9">
+        <path d="M-11 -49V-21M-5.5 -54V-16M0 -55V-15M5.5 -54V-16M11 -49V-21"/>
+        <path d="M-12 -47H12M-15 -41H15M-16 -35H16M-15 -29H15M-12 -23H12"/>
+      </g>
+      <path d="M-6 -16L0 -4L6 -16" stroke-width="2.6" stroke-linejoin="round"/>
+      <path d="M0 -4V24" stroke-width="5.6"/>
+    </g>
+  </defs>
+  <circle cx="100" cy="100" r="100" fill="#fff"/>
+  <circle cx="100" cy="100" r="97" fill="#0b7a3e"/>
+  <circle cx="100" cy="100" r="63.5" fill="#fff"/>
+  <circle cx="100" cy="100" r="60" fill="#e2672a"/>
+  <g clip-path="url(#stred)" fill="none" stroke="#fff" stroke-width="2.8">
+    <path d="M50 46Q76 100 50 154"/>
+    <path d="M150 46Q124 100 150 154"/>
+  </g>
+  <use href="#raketa" transform="translate(100 119) rotate(-46)"/>
+  <use href="#raketa" transform="translate(100 119) rotate(46)"/>
+  <g fill="#fff" font-family="Arial, Helvetica, sans-serif" font-weight="700" text-anchor="middle">
+    <text font-size="16.5" letter-spacing="5.6"><textPath href="#oblouk-nahore" startOffset="50%">TENISOVÝ KLUB</textPath></text>
+    <text font-size="21" letter-spacing="8.5"><textPath href="#oblouk-dole" startOffset="50%">SATALICE</textPath></text>
+  </g>
+</svg>

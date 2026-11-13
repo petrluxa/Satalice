@@ -1,0 +1,1264 @@
+<!doctype html>
+<html lang="cs" class="bez-js">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tenis Satalice – starší, mladší, nejmladší</title>
+<meta name="description" content="Tenisový klub SK Satalice, Praha&nbsp;9. Antuka i umělý povrch, padel, zimní haly, školička od tří let a akademie.">
+<link rel="icon" href="assets/logo/tk-satalice.svg">
+<link href="https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre:400,500,700%7CKarla:400,500,600,700&subset=latin-ext&display=swap" rel="stylesheet">
+<script>
+(function(){var h=document.documentElement;h.classList.remove('bez-js');h.classList.add('js');
+var q=new URLSearchParams(location.search).get('uvod');
+var rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+var byl=false;try{byl=sessionStorage.getItem('satalice-uvod-04')==='1';}catch(e){}
+if(q===null&&!rm&&!byl)h.classList.add('ceka');})();
+</script>
+<style>
+:root{
+  --zelena:#0b7a3e; --sokl:#0f4a33; --sokl-tm:#0b3626; --natěr:#12402d; --antuka:#e2672a; --antuka-tm:#b8480f;
+  --omitka:#efebe2; --bila:#fffdf8; --krem:#f6f1e4; --ink:#14221b; --ink2:#46524a; --linka:rgba(20,34,27,.16);
+  --okraj:clamp(20px,5.2vw,84px);
+  --pismo:'Frank Ruhl Libre',Georgia,'Times New Roman',serif; --text:'Karla',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html.zamek{overflow:hidden}
+body{margin:0;background:var(--omitka);color:var(--ink);font:400 17px/1.55 var(--text);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{max-width:100%;height:auto;display:block}
+h1,h2,h3,h4,p,ul,ol,figure,blockquote,dl,dd{margin:0}
+ul,ol{padding:0;list-style:none}
+.skryte{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.obal{width:min(1240px,100% - 2*var(--okraj));margin:0 auto}
+main{overflow-x:clip}
+[id]{scroll-margin-top:24px}
+
+/* ---------- hlavička ---------- */
+.hlava{position:absolute;left:0;right:0;top:0;z-index:20;display:flex;align-items:center;gap:30px;padding:16px var(--okraj)}
+.znak{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);margin-right:auto}
+.znak img{width:46px;height:46px;border-radius:50%;box-shadow:0 1px 2px rgba(40,30,10,.3),0 6px 14px rgba(40,30,10,.14)}
+.znak b{font:500 20px/1.05 var(--pismo);letter-spacing:-.005em;display:block}
+.znak small{display:block;font:500 11.5px/1.2 var(--text);letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);margin-top:4px}
+.menu{display:flex;gap:26px}
+.menu a{font:500 15.5px/1 var(--text);text-decoration:none;color:var(--ink);padding:8px 0;border-bottom:1.5px solid transparent;transition:border-color .25s}
+.menu a:hover,.menu a:focus-visible{border-color:var(--antuka)}
+.tl{display:inline-flex;align-items:center;gap:10px;font:700 16px/1 var(--text);text-decoration:none;padding:16px 22px;border-radius:2px;white-space:nowrap;transition:background .25s,color .25s,border-color .25s}
+.tl svg{width:15px;height:15px;flex:none}
+.tl-antuka{background:var(--antuka-tm);color:#fff;box-shadow:0 10px 22px -12px rgba(90,30,0,.7)}
+.tl-antuka:hover{background:#9c3c0b}
+.tl-linka{border:1.5px solid currentColor;color:var(--natěr);padding:14.5px 20px}
+.tl-linka:hover{background:var(--natěr);color:#fff;border-color:var(--natěr)}
+.tl-maly{padding:12px 18px;font-size:15px}
+.na-tmave .tl-linka,.tl-linka.sv{color:var(--krem)}
+.na-tmave .tl-linka:hover,.tl-linka.sv:hover{background:var(--krem);color:var(--natěr);border-color:var(--krem)}
+.burger{display:none;width:46px;height:46px;border:0;background:none;padding:0;cursor:pointer;color:var(--ink);position:relative;z-index:32;margin-right:-8px}
+.burger i{position:absolute;left:11px;right:11px;height:2px;background:currentColor;transition:transform .3s,opacity .2s,top .3s}
+.burger i:nth-child(1){top:16px}.burger i:nth-child(2){top:22px}.burger i:nth-child(3){top:28px}
+.otevrene .hlava{z-index:31}
+.otevrene .znak,.otevrene .znak small{color:var(--krem)}
+.otevrene .burger,.otevrene.mimo .burger{color:var(--krem);background:none;box-shadow:none}
+.bez-js .burger{display:none}
+.otevrene .burger i:nth-child(1){top:22px;transform:rotate(45deg)}
+.otevrene .burger i:nth-child(2){opacity:0}
+.otevrene .burger i:nth-child(3){top:22px;transform:rotate(-45deg)}
+.panel{position:fixed;inset:0;z-index:30;background:var(--sokl-tm);color:var(--krem);padding:92px var(--okraj) 28px;display:flex;flex-direction:column;overflow:auto;
+  visibility:hidden;opacity:0;transition:opacity .3s,visibility 0s .3s}
+.otevrene .panel{visibility:visible;opacity:1;transition:opacity .3s}
+.panel::before{content:"";position:absolute;left:0;right:0;top:74px;height:6px;background:var(--bila)}
+.panel a.p{font:500 30px/1.25 var(--pismo);text-decoration:none;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+.panel .tl{margin-top:22px;justify-content:center}
+.panel p{margin-top:16px;font-size:15px;color:rgba(246,241,228,.75)}
+
+/* ---------- titulka: zeď ---------- */
+.scena{position:relative;background:var(--omitka)}
+.zedbox{position:relative;height:100vh;height:100svh;min-height:620px;max-height:1180px;overflow:hidden;isolation:isolate;
+  --fs:min(7vw,12vh);--zem:8.5%;
+  background:linear-gradient(#f3ecdc 0,#ecdcbd 100%)}
+.zedbox canvas{position:absolute;left:0;top:0;width:100%;height:100%;display:block}
+#zed{z-index:0}
+#svetlo{z-index:2;mix-blend-mode:multiply;pointer-events:none}
+#mic{z-index:3;pointer-events:none}
+.slova{position:absolute;inset:0;z-index:1;mix-blend-mode:multiply;color:var(--natěr);
+  font:500 var(--fs)/1.1 var(--pismo);letter-spacing:-.022em;pointer-events:none}
+.slovo{position:absolute;white-space:nowrap}
+.s1{left:6%;top:13.5%}
+.s2{left:35%;top:26.5%}
+.s3{left:55%;top:39.5%}
+.s3 i{font-style:normal;color:#b9501f}
+.sokl{position:absolute;left:0;right:0;bottom:var(--zem);padding:clamp(18px,2.9vh,30px) var(--okraj) clamp(18px,3vh,32px);
+  display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:clamp(24px,4vw,64px);align-items:center;color:var(--krem)}
+.bez-js .sokl{background:linear-gradient(#11503a,#0c3d2a);border-top:11px solid var(--bila)}
+.bez-js .zedbox::after{content:"";position:absolute;left:0;right:0;bottom:0;height:var(--zem);background:#b4582a}
+.sokl-text{position:relative;z-index:4}
+.sokl-akce{position:relative;z-index:4;display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end}
+.nabidka{display:flex;flex-wrap:wrap;gap:4px clamp(18px,2.6vw,40px);align-items:baseline}
+.nabidka a{font:500 clamp(26px,2.7vw,38px)/1.15 var(--pismo);letter-spacing:-.01em;text-decoration:none;color:var(--krem);
+  background:linear-gradient(currentColor,currentColor) 0 100%/0 1.5px no-repeat;transition:background-size .45s cubic-bezier(.2,.7,.2,1);padding-bottom:3px}
+.nabidka a:hover,.nabidka a:focus-visible{background-size:100% 1.5px}
+.nabidka li+li{position:relative}
+.nabidka li+li::before{content:"";position:absolute;left:calc(clamp(18px,2.6vw,40px) / -2 - 3px);top:52%;width:6px;height:6px;border-radius:50%;background:#d8703a}
+.sokl-text p{margin-top:10px;max-width:42em;font-size:16.5px;line-height:1.5;color:rgba(246,241,228,.86)}
+.ceka .sokl-text,.ceka .sokl-akce,.ceka .znovu{opacity:0;animation:pojistka .01s 6s forwards}
+@keyframes pojistka{to{opacity:1}}
+.znovu{position:absolute;z-index:5;right:var(--okraj);bottom:calc(var(--zem) / 2);transform:translateY(50%);display:inline-flex;align-items:center;gap:8px;background:none;border:0;padding:8px 0;min-height:44px;cursor:pointer;
+  font:500 13.5px/1 var(--text);letter-spacing:.04em;color:#fff6ec;text-shadow:0 1px 3px rgba(60,20,0,.55)}
+.znovu svg{width:14px;height:14px}
+.znovu:hover{color:#fff}
+.bez-js .znovu{display:none}
+
+/* ---------- společné: stěny ---------- */
+.zed{position:relative;isolation:isolate;background-color:var(--omitka)}
+.zed::before{content:"";position:absolute;inset:0;z-index:-2;background-image:var(--zrno,none);background-size:220px 220px;opacity:.5;pointer-events:none}
+.zed::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:var(--prechod,linear-gradient(transparent,transparent)),var(--svetlo,none)}
+/* vržené stíny v sekcích: kreslí je stejná funkce jako na titulce */
+.stin{position:absolute;bottom:0;height:calc(var(--v,200px) * var(--m,1));width:auto;mix-blend-mode:multiply;opacity:.92;pointer-events:none;transform:skewX(-8.5deg);transform-origin:50% 100%}
+.stin.zrc{transform:skewX(-8.5deg) scaleX(-1)}
+.bez-js .stin,.bez-js .listi{display:none}
+.listi{position:absolute;z-index:-1;right:0;top:0;width:min(46vw,560px);height:auto;mix-blend-mode:multiply;opacity:.55;pointer-events:none}
+.h2{font:500 clamp(36px,4.7vw,66px)/1.08 var(--pismo);letter-spacing:-.022em;color:var(--natěr);padding-top:.16em;margin-top:-.16em;text-wrap:balance}
+.h3{font:500 clamp(24px,2.3vw,31px)/1.2 var(--pismo);letter-spacing:-.01em;color:var(--natěr)}
+.uvodnik{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(24px,5vw,80px);align-items:end}
+.uvodnik p,.perex{font-size:18.5px;line-height:1.55;max-width:34em;color:var(--ink)}
+.maly{font:700 12px/1.35 var(--text);letter-spacing:.13em;text-transform:uppercase;color:var(--ink2)}
+.pozn{font-size:15px;line-height:1.5;color:var(--ink2)}
+.pozn b{color:var(--ink)}
+.pozn a,.odkaz{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.2em;text-decoration-color:rgba(20,34,27,.4)}
+.pozn a:hover,.odkaz:hover{text-decoration-color:var(--antuka)}
+.cara{height:9px;background:var(--bila);box-shadow:0 1px 0 rgba(60,50,30,.16),0 -1px 0 rgba(60,50,30,.08)}
+.otisk{width:13px;height:12px;border-radius:50%;flex:none;display:inline-block;background:radial-gradient(circle,rgba(196,98,52,.7) 0,rgba(204,100,50,.98) 52%,rgba(204,100,50,0) 72%)}
+.ceny li{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:9px 0;border-bottom:1px solid var(--linka)}
+.ceny b{font:500 19px/1.2 var(--pismo);white-space:nowrap;color:var(--natěr)}
+.ceny b small{font:400 14px var(--text);color:var(--ink2)}
+.ceny .dve b{min-width:5.3em;text-align:right}
+.ceny .zahlavi{font:700 11.5px/1.2 var(--text);letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);border-bottom-color:rgba(20,34,27,.4)}
+.ceny .zahlavi i{font-style:normal;min-width:6.1em;text-align:right}
+.ceny .pravo{display:flex;gap:10px}
+
+/* ---------- 1 · tři generace (ráno) ---------- */
+.generace{--omitka:#f4f0e7;--svetlo:linear-gradient(255deg,rgba(255,255,255,.8) 0,rgba(255,255,255,0) 48%),linear-gradient(75deg,rgba(196,176,150,.16) 0,rgba(196,176,150,0) 50%);
+  --prechod:linear-gradient(180deg,rgba(244,240,231,0) calc(100% - 200px),#f4f0e7 100%);
+  padding:clamp(72px,9vw,128px) 0 clamp(70px,8vw,116px)}
+.tri{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(26px,3.8vw,60px);align-items:start;margin-top:clamp(18px,2.4vw,36px)}
+.gen:nth-child(2){margin-top:84px}
+.gen:nth-child(3){margin-top:168px}
+.gen-hlava{position:relative;height:290px;display:flex;align-items:flex-end}
+.gen-hlava h3{position:relative;font:500 clamp(40px,4.3vw,60px)/1.05 var(--pismo);letter-spacing:-.022em;color:var(--natěr);padding-bottom:10px}
+.gen-stin{right:3%}
+.gen:nth-child(1) .gen-stin{--v:274px}
+.gen:nth-child(2) .gen-stin{--v:226px;right:0}
+.gen:nth-child(3) .gen-stin{--v:164px;right:-34px}
+.gen .kdo{margin:16px 0 24px}
+.gen h4{margin:26px 0 4px;font:700 17px/1.3 var(--text);color:var(--ink);display:flex;align-items:center;gap:10px}
+.gen .pozn{margin-top:12px}
+.gen .tl{margin-top:24px}
+
+/* ---------- 2 · padel (poledne) ---------- */
+.padel{--omitka:#f6f3ec;--prechod:linear-gradient(180deg,#f4f0e7 0,rgba(244,240,231,0) 200px);--svetlo:linear-gradient(180deg,rgba(255,255,255,0) 120px,rgba(255,255,255,.7) 300px,rgba(255,255,255,0) 60%);padding:clamp(60px,7vw,100px) 0 0}
+.dve-zdi{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.5fr);gap:0;align-items:stretch;margin-top:clamp(84px,8vw,112px)}
+.stara{position:relative;min-height:520px;display:flex;flex-direction:column;justify-content:flex-start;padding:clamp(22px,3vw,40px) clamp(20px,3vw,44px) 0 max(var(--okraj),calc((100vw - 1240px) / 2));overflow:hidden}
+.stara::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background:repeating-linear-gradient(52deg,rgba(40,50,60,.11) 0 1.6px,transparent 1.6px 23px),repeating-linear-gradient(-52deg,rgba(40,50,60,.11) 0 1.6px,transparent 1.6px 23px);
+  -webkit-mask-image:linear-gradient(100deg,transparent 30%,#000 100%);mask-image:linear-gradient(100deg,transparent 30%,#000 100%);filter:blur(.8px)}
+.stara .rok,.sklo .rok{font:500 clamp(58px,7vw,104px)/1 var(--pismo);letter-spacing:-.03em;padding-top:.1em}
+.stara .rok{color:var(--natěr)}
+.stara p{position:relative;margin-top:14px;max-width:21em;font-size:16.5px}
+.stara .pata{position:absolute;left:0;right:0;bottom:0}
+.stara .pata i{display:block}
+.stara .pata .cara{height:10px}
+.stara .pata .zel{height:104px;background:linear-gradient(#11503a,#0c3d2a)}
+.stara .o1,.stara .o2,.stara .o3{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(200,104,56,.5) 0,rgba(200,98,48,.82) 55%,rgba(200,98,48,0) 72%)}
+.stara .o1{width:30px;height:27px;left:34%;bottom:190px}
+.stara .o2{width:26px;height:24px;left:58%;bottom:246px;opacity:.7}
+.stara .o3{width:28px;height:26px;left:21%;bottom:152px;opacity:.55}
+.sklo{--pl:clamp(28px,4.6vw,72px);position:relative;color:#eef6f4;padding:clamp(34px,4.4vw,64px) max(var(--okraj),calc((100vw - 1240px) / 2)) clamp(40px,5vw,70px) var(--pl);
+  background:linear-gradient(112deg,rgba(255,255,255,0) 0 15%,rgba(255,255,255,.09) 15% 24%,rgba(255,255,255,0) 24% 29%,rgba(255,255,255,.045) 29% 32%,rgba(255,255,255,0) 32% 72%,rgba(255,255,255,.05) 72% 80%,rgba(255,255,255,0) 80%),
+    linear-gradient(165deg,#1f5553 0%,#143f41 44%,#0c2c31 100%);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.22),inset 0 40px 60px -40px rgba(255,255,255,.2),-18px 0 28px -18px rgba(20,40,40,.4)}
+.sklo::before{content:"";position:absolute;left:0;right:0;top:-58px;height:58px;pointer-events:none;
+  background:repeating-linear-gradient(45deg,rgba(30,44,48,.5) 0 1.4px,transparent 1.4px 15px),repeating-linear-gradient(-45deg,rgba(30,44,48,.5) 0 1.4px,transparent 1.4px 15px);
+  border-top:3px solid #27383b;border-left:3px solid #27383b}
+.spara{position:absolute;top:0;bottom:0;left:calc(var(--pl) + 712px);width:1px;background:rgba(255,255,255,.3);box-shadow:1px 0 0 rgba(0,20,20,.35)}
+.spara.s2{left:calc(var(--pl) + 1016px)}
+.spara::before{content:"";position:absolute;left:-7px;top:14px;width:15px;height:15px;border-radius:2px;background:linear-gradient(140deg,#f4f7f7 0,#aeb9b9 46%,#7d8a8a 54%,#c4cdcd 100%);box-shadow:0 3px 6px rgba(0,10,10,.45),0 0 0 .5px rgba(255,255,255,.6)}
+@media (max-width:1300px){.spara{display:none}}
+@media (max-width:1740px){.spara.s2{display:none}}
+.sklo>*:not(.spara){position:relative}
+.sklo .rok{color:rgba(238,246,244,.92)}
+.sklo .h2{color:#fff;margin-top:6px}
+.sklo .perex{margin-top:18px;color:rgba(238,246,244,.86);max-width:33em}
+.sklo-ceny{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 clamp(24px,4vw,56px);margin-top:28px;max-width:660px}
+.sklo-ceny div{padding:14px 0;border-top:1px solid rgba(255,255,255,.26)}
+.sklo-ceny dt{font:700 12px/1.3 var(--text);letter-spacing:.12em;text-transform:uppercase;color:rgba(238,246,244,.7)}
+.sklo-ceny dd{font:500 clamp(26px,2.6vw,36px)/1.15 var(--pismo);margin-top:4px}
+.sklo-ceny dd small{font:400 15px var(--text);color:rgba(238,246,244,.75)}
+.sklo .tlacitka{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;align-items:center}
+.sklo .pozn{color:rgba(238,246,244,.75);margin-top:16px}
+
+/* ---------- 3 · akademie (odpoledne) ---------- */
+.akademie{--omitka:#f2ecdf;--svetlo:linear-gradient(118deg,rgba(255,250,236,0) 0 18%,rgba(255,250,236,.75) 30% 58%,rgba(255,250,236,0) 74%);padding:clamp(72px,9vw,128px) 0 0}
+.ak-uvod{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(28px,5vw,84px);align-items:end}
+.ak-uvod .perex{margin-top:22px}
+.ak-uvod .perex+.perex{margin-top:14px}
+.ak-foto{position:relative;margin-top:8px}
+.ak-foto img{width:100%;aspect-ratio:4/3;object-fit:cover;box-shadow:14px 22px 34px -16px rgba(70,50,20,.55),0 1px 2px rgba(60,40,10,.3)}
+.ak-foto figcaption,.popisek{font-size:14px;color:var(--ink2);margin-top:12px}
+.rust{position:relative;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0 clamp(10px,1.6vw,26px);align-items:end;margin-top:clamp(40px,5vw,70px);padding-bottom:clamp(40px,5vw,64px)}
+.rust li{position:relative;padding-bottom:calc(var(--n) * 30px)}
+.rust li::after{content:"";position:absolute;left:0;right:0;bottom:calc(var(--n) * 30px - 14px);height:7px;background:#fffefb;box-shadow:0 1px 0 rgba(70,48,16,.38),0 -1px 0 rgba(70,48,16,.1),4px 14px 16px -7px rgba(96,62,18,.5)}
+.rust b{display:block;font:500 clamp(30px,3.3vw,46px)/1 var(--pismo);letter-spacing:-.02em;color:var(--natěr)}
+.rust b small{font:500 15px var(--text);letter-spacing:0;color:var(--ink2)}
+.rust span{display:block;font:500 15.5px/1.3 var(--text);margin:6px 0 22px;color:var(--ink)}
+.sokl-pas{position:relative;color:var(--krem);background:linear-gradient(#11503a,#0c3a28);border-top:10px solid var(--bila);padding:clamp(40px,5vw,68px) 0 clamp(44px,5.4vw,76px)}
+.sokl-pas::before{content:"";position:absolute;inset:0;background:linear-gradient(118deg,rgba(255,240,200,0) 0 18%,rgba(255,240,200,.09) 30% 58%,rgba(255,240,200,0) 74%);pointer-events:none}
+.sokl-pas .obal{position:relative}
+.tr-hlava{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:10px 40px}
+.tr-hlava .h2{color:var(--krem)}
+.tr-hlava p{max-width:30em;color:rgba(246,241,228,.8);font-size:16.5px}
+.sokl-pas .maly{color:rgba(246,241,228,.68)}
+.tr-rada{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.5fr);gap:clamp(24px,4.4vw,72px);align-items:end;margin-top:clamp(26px,3.4vw,44px)}
+.tr-sef{position:relative;min-height:230px;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start}
+.tr-sef>*:not(.stin){position:relative}
+.tr-sef b{font:500 clamp(34px,3.6vw,50px)/1.08 var(--pismo);letter-spacing:-.015em;margin-top:8px}
+.tr-sef i{font-style:normal;margin-top:6px;color:rgba(246,241,228,.8)}
+.tr-sef a{margin-top:12px;font:500 23px/1.25 var(--pismo);text-decoration:none;border-bottom:1px solid rgba(246,241,228,.5)}
+.tr-stin{--v:300px;right:-4%;bottom:calc(-1 * clamp(44px,5.4vw,76px));opacity:.5}
+.tr-tridy{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 clamp(18px,3vw,48px);align-items:end}
+.tr-tridy li{border-top:1px solid rgba(246,241,228,.34);padding-top:14px}
+.tr-tridy .maly{display:block;margin-bottom:6px}
+.tr-tridy b{display:block;font:500 clamp(21px,1.86vw,27px)/1.2 var(--pismo);letter-spacing:.005em;padding:7px 0;white-space:nowrap}
+
+/* ---------- 4 · klub (podvečer) ---------- */
+.klub{--omitka:#f0e3cc;--svetlo:linear-gradient(100deg,rgba(255,238,206,.9) 0,rgba(255,238,206,0) 52%),linear-gradient(280deg,rgba(150,96,60,.2) 0,rgba(150,96,60,0) 46%);padding:clamp(72px,9vw,128px) 0 clamp(64px,8vw,110px)}
+.otisky{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2.6vw,40px);margin-top:clamp(30px,4vw,56px);align-items:start}
+.otisky li:nth-child(1){margin-top:62px}.otisky li:nth-child(2){margin-top:0}.otisky li:nth-child(3){margin-top:104px}.otisky li:nth-child(4){margin-top:34px}
+.zasah{display:flex;align-items:center;gap:12px}
+.zasah i{flex:none;width:58px;height:58px;margin-left:-6px;background:var(--o,radial-gradient(circle,rgba(203,104,54,.45) 0,rgba(201,98,48,.85) 52%,rgba(201,98,48,0) 68%)) center/contain no-repeat}
+.otisky li:nth-child(1) .zasah i{--o:var(--otisk1)}.otisky li:nth-child(2) .zasah i{--o:var(--otisk2)}.otisky li:nth-child(3) .zasah i{--o:var(--otisk3)}.otisky li:nth-child(4) .zasah i{--o:var(--otisk4)}
+.zasah b{font:500 clamp(44px,5vw,72px)/1 var(--pismo);letter-spacing:-.03em;color:var(--natěr);padding-top:.08em}
+.otisky p{margin-top:12px;max-width:17em;font-size:16.5px}
+.otisky p b{font-weight:700}
+.pamet{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(30px,6vw,96px);margin-top:clamp(56px,7vw,100px);align-items:start}
+.pamet blockquote{font:400 clamp(24px,2.7vw,38px)/1.32 var(--pismo);letter-spacing:-.012em;color:var(--natěr)}
+.pamet cite{display:block;margin-top:18px;font:700 12px/1.4 var(--text);font-style:normal;letter-spacing:.13em;text-transform:uppercase;color:var(--ink2)}
+.dovetky li{display:grid;grid-template-columns:7.4em minmax(0,1fr);gap:16px;align-items:baseline;padding:13px 0;border-bottom:1px solid rgba(60,40,10,.22)}
+.dovetky li:first-child{border-top:7px solid var(--bila)}
+.dovetky i{font:500 clamp(28px,2.7vw,38px)/1 var(--pismo);font-style:normal;letter-spacing:-.01em;color:#b04a17}
+.dovetky span{font-size:17.5px}
+.klub .pozn{margin-top:16px;font-size:16px}
+.mladez{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.45fr);gap:clamp(28px,5vw,84px);align-items:end;margin-top:clamp(50px,6vw,84px)}
+.mladez{align-items:center}
+.mladez p{font:400 clamp(20px,1.75vw,24px)/1.42 var(--pismo);letter-spacing:-.005em;color:var(--natěr);max-width:22em}
+.klub-foto img{width:100%;aspect-ratio:2000/924;object-fit:cover;box-shadow:14px 22px 34px -16px rgba(80,50,10,.55)}
+
+/* ---------- 5 · rituál (antuka) ---------- */
+.ritual{position:relative;color:#fff4e8;background:#b9562a;padding:clamp(54px,6.4vw,92px) 0;overflow:hidden;isolation:isolate}
+.ritual::before{content:"";position:absolute;inset:0;z-index:-1;background-image:var(--zrno,none),repeating-linear-gradient(92deg,rgba(90,30,6,.085) 0 1.4px,transparent 1.4px 7px),repeating-linear-gradient(94.5deg,rgba(90,30,6,.07) 0 1px,transparent 1px 11px),repeating-linear-gradient(91deg,rgba(255,196,156,.06) 0 2px,transparent 2px 17px);background-size:220px 220px,auto,auto,auto;opacity:.9}
+.ritual::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(60,20,4,.42),rgba(60,20,4,0) 34%),linear-gradient(100deg,rgba(255,200,150,.16),rgba(255,200,150,0) 60%)}
+.ritual ol{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,4vw,64px);margin-top:clamp(26px,3.4vw,44px)}
+.ritual .h2{color:#fff4e8;max-width:15em}
+.ritual li b{display:block;font:500 clamp(34px,3.8vw,54px)/1.08 var(--pismo);letter-spacing:-.02em;padding-bottom:14px;border-bottom:6px solid rgba(255,250,240,.95)}
+.ritual li p{margin-top:16px;font-size:17.5px;line-height:1.55;color:#fff;text-shadow:0 1px 2px rgba(90,30,0,.35)}
+.ritual .pozn{color:#fff3e6;font-size:16px;margin-top:28px;text-shadow:0 1px 2px rgba(90,30,0,.35)}
+
+/* ---------- 6 · kempy, 8 · členství, 9 · aktuality ---------- */
+.kempy{--omitka:#f3eee4;--svetlo:linear-gradient(110deg,rgba(255,255,255,.6),rgba(255,255,255,0) 50%);--prechod:linear-gradient(180deg,rgba(243,238,228,0) calc(100% - 160px),#f3eee4 100%);padding:clamp(72px,9vw,120px) 0 clamp(50px,6vw,84px);overflow:hidden}
+.turnusy{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,3vw,48px);margin-top:clamp(30px,4vw,52px);border-bottom:9px solid var(--bila);box-shadow:0 1px 0 rgba(60,50,30,.16)}
+.turnusy li{padding-bottom:16px}
+.turnusy b{display:block;font:500 clamp(30px,3.6vw,52px)/1.05 var(--pismo);letter-spacing:-.02em;color:var(--natěr)}
+.turnusy span{display:block;margin-bottom:8px}
+.kemp-stin{--v:172px;right:5%;opacity:.8;transform:skewX(-33deg) scaleY(1.12)}
+.kempy .uvodnik p{max-width:17em}
+.kempy .pod{display:flex;flex-wrap:wrap;gap:12px 40px;justify-content:space-between;align-items:baseline;margin-top:18px}
+.areal{--omitka:#f3eee4;--svetlo:linear-gradient(180deg,rgba(255,255,255,0) 0,rgba(255,252,244,.5) 220px,rgba(255,252,244,0) 80%);padding:clamp(34px,4vw,60px) 0 clamp(30px,4vw,50px)}
+.areal .obal{padding-bottom:clamp(30px,4vw,50px)}
+.areal-co{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 clamp(20px,3.4vw,56px);margin-top:clamp(24px,3vw,40px)}
+.areal-co li{padding:14px 0;border-top:1px solid var(--linka);font-size:16.5px}
+.areal-co b{display:block;font:500 22px/1.2 var(--pismo);color:var(--natěr);margin-bottom:3px}
+.areal figure img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;max-height:86vh}
+.areal figcaption{padding:12px var(--okraj) 0}
+.clenstvi{--omitka:#efe6d6;--svetlo:linear-gradient(96deg,rgba(255,236,206,.85) 0,rgba(255,236,206,0) 56%);--prechod:linear-gradient(180deg,rgba(239,230,214,0) calc(100% - 200px),#efe6d6 100%);padding:clamp(72px,9vw,120px) 0}
+.rimsa{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));height:236px;margin-top:clamp(8px,1.4vw,20px);border-bottom:9px solid var(--bila);box-shadow:0 1px 0 rgba(60,50,30,.2),0 20px 16px -20px rgba(96,62,18,.34)}
+.rimsa span{position:relative}
+.rimsa .stin{left:6%}
+.vek{display:grid;grid-template-columns:repeat(5,minmax(0,1fr))}
+.vek li{position:relative}
+.vek b{display:block;font:500 clamp(28px,3.2vw,46px)/1.05 var(--pismo);letter-spacing:-.02em;color:var(--natěr);padding:20px 12px 0 0;white-space:nowrap}
+.vek b small{font:400 15px var(--text);letter-spacing:0;color:var(--ink2)}
+.vek span{display:block;padding:8px 12px 0 0;font-size:16.5px}
+.vek span i{display:block;font-style:normal;color:var(--ink2);font-size:14.5px}
+.cl-dole{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3.4vw,56px);margin-top:clamp(34px,4vw,56px)}
+.cl-dole h3{margin-bottom:8px}
+.aktuality{--omitka:#e7dcc9;--prechod:linear-gradient(180deg,#efe6d6 0,rgba(239,230,214,0) 220px);--svetlo:linear-gradient(96deg,rgba(255,226,190,.7) 0,rgba(255,226,190,0) 50%),linear-gradient(0deg,rgba(90,70,90,.14),rgba(90,70,90,0) 60%);padding:clamp(64px,8vw,108px) 0}
+.zpravy{margin-top:clamp(24px,3vw,40px)}
+.zpravy li{display:grid;grid-template-columns:8.5em minmax(0,1fr) auto;gap:14px clamp(18px,3vw,48px);align-items:baseline;padding:20px 0;border-top:1px solid rgba(60,40,10,.24)}
+.zpravy li:last-child{border-bottom:1px solid rgba(60,40,10,.24)}
+.zpravy .bezdata{font:700 12.5px/1.3 var(--text);letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)}
+.zpravy time{display:block;margin-top:5px;font:500 14.5px/1.3 var(--text);color:var(--ink2)}
+.zpravy b{font:500 clamp(21px,2.1vw,28px)/1.25 var(--pismo);color:var(--natěr)}
+.zpravy a{font:700 15px var(--text);white-space:nowrap}
+
+/* ---------- 10 · partneři ---------- */
+.partneri{background:#fbfaf6;padding:clamp(44px,5vw,70px) 0;text-align:center;border-top:9px solid #fff}
+.partneri ul{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:26px clamp(30px,5vw,72px);margin-top:26px}
+.partneri img{height:62px;width:auto;filter:grayscale(1) contrast(.9);opacity:.62;transition:filter .4s,opacity .4s}
+.partneri li.sirsi img{height:36px}
+.partneri li:hover img{filter:none;opacity:1}
+@media (hover:none),(pointer:coarse){.partneri img{filter:none;opacity:1}}
+
+/* ---------- 11 · kontakt (soumrak) ---------- */
+.kontakt{position:relative;isolation:isolate;color:#eae6dc;background:#27353a;padding:clamp(72px,9vw,120px) 0 0}
+.kontakt::before{content:"";position:absolute;inset:0;z-index:-1;background-image:var(--zrno,none);background-size:220px 220px;opacity:.35}
+.kontakt::after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(60% 70% at 78% 4%,rgba(255,206,140,.26),rgba(255,206,140,0) 70%),linear-gradient(180deg,rgba(60,50,80,.3),rgba(10,20,26,.35))}
+.kontakt .h2{color:#f4efe3}
+.kontakt .maly{color:rgba(234,230,220,.62)}
+.kon{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(22px,3.4vw,56px);margin-top:clamp(30px,4vw,54px);padding-bottom:clamp(50px,6vw,84px)}
+.kon h3{margin-bottom:12px}
+.kon p{font-size:16.5px;line-height:1.6}
+.kon p+p{margin-top:10px}
+.kon .velke{font:500 clamp(24px,2.3vw,31px)/1.2 var(--pismo);text-decoration:none;display:inline-block}
+.kon a{text-decoration-color:rgba(234,230,220,.4);text-underline-offset:.2em;text-decoration-thickness:1px}
+.kon a:hover{text-decoration-color:var(--antuka)}
+.kon .tl{margin-top:16px}
+.vybor{position:relative;color:var(--krem);background:linear-gradient(#0f4532,#0a3021);border-top:10px solid #dfe3dc;padding:clamp(30px,4vw,50px) 0 clamp(34px,4.4vw,56px)}
+.vybor ul{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 clamp(18px,3vw,48px);margin-top:16px}
+.vybor li{padding:12px 0;border-top:1px solid rgba(246,241,228,.22)}
+.vybor b{display:block;font:500 21px/1.2 var(--pismo)}
+.vybor span{font-size:14.5px;color:rgba(246,241,228,.7)}
+.vybor .maly{color:rgba(246,241,228,.62)}
+
+/* ---------- patička na antuce ---------- */
+.pata-webu{position:relative;isolation:isolate;background:#a84c24;color:#fff0e2;font-size:14.5px;padding:22px 0 24px}
+.pata-webu::before{content:"";position:absolute;inset:0;z-index:-1;background-image:var(--zrno,none);background-size:220px 220px;opacity:.9}
+.pata-webu::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(40,14,2,.6),rgba(40,14,2,.12) 60%)}
+.pata-webu .obal{display:flex;flex-wrap:wrap;gap:10px 30px;align-items:center;justify-content:space-between}
+.pata-webu .vpravo{display:flex;flex-wrap:wrap;gap:8px 26px;align-items:center}
+/* Podpis autora webu */
+.pl-podpis{display:inline-flex;align-items:center;gap:.55em;color:inherit;text-decoration:none;white-space:nowrap;vertical-align:middle;line-height:1.2}
+.pl-podpis__logo{flex:none;width:1.55em;height:1.55em;overflow:visible}
+.pl-podpis strong{font-weight:600;text-decoration:underline;text-decoration-color:transparent;text-underline-offset:.22em;text-decoration-thickness:1px;transition:text-decoration-color .3s}
+.pl-podpis:hover strong,.pl-podpis:focus-visible strong{text-decoration-color:currentColor}
+.pl-podpis__mic{transform-box:fill-box;transform-origin:50% 100%}
+.pl-podpis:hover .pl-podpis__mic,.pl-podpis:focus-visible .pl-podpis__mic{animation:pl-podpis-skok .95s cubic-bezier(.33,0,.25,1)}
+@keyframes pl-podpis-skok{0%{transform:translateY(0)}30%{transform:translateY(-10px)}56%{transform:translateY(0)}74%{transform:translateY(-3px)}90%,100%{transform:translateY(0)}}
+@media (prefers-reduced-motion:reduce){.pl-podpis:hover .pl-podpis__mic,.pl-podpis:focus-visible .pl-podpis__mic{animation:none}}
+
+.rv{opacity:0;transform:translateY(18px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in,.bez-js .rv{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+@media (max-height:760px) and (min-width:1001px){
+  .zedbox{--fs:min(7vw,11.4vh)}
+  .sokl-text p{font-size:15.5px;margin-top:6px}
+  .nabidka a{font-size:clamp(24px,2.4vw,32px)}
+  .tl{padding:14px 20px}.tl-linka{padding:12.5px 18px}.tl-maly{padding:11px 16px}
+}
+@media (max-width:1180px){.menu{gap:18px}.menu a{font-size:14.5px}}
+@media (max-width:1000px){
+  .menu,.hlava>.tl{display:none}
+  .burger{display:block;position:fixed;top:16px;right:calc(var(--okraj) - 8px);margin:0;border-radius:50%;transition:background .3s,box-shadow .3s,color .3s}
+  .mimo .burger{background:var(--sokl-tm);color:var(--krem);box-shadow:0 8px 18px -8px rgba(0,0,0,.6)}
+  .zedbox{--fs:min(13.4vw,8.6vh);--zem:6%;min-height:560px}
+  .s1{left:6%;top:12.5%}
+  .s2{left:13%;top:calc(12.5% + var(--fs) * 1.08)}
+  .s3{left:20%;top:calc(12.5% + var(--fs) * 2.16)}
+  .sokl{grid-template-columns:1fr;row-gap:14px;padding:16px var(--okraj) 18px}
+  .sokl-akce{justify-content:flex-start}
+  .sokl-akce .tl{flex:1 1 auto;justify-content:center;padding:14px 14px;font-size:15px}
+  .sokl-akce .tl-linka{padding:12.5px 12px}
+  .nabidka{gap:2px 22px}
+  .nabidka a{font-size:clamp(21px,6.2vw,25px);display:inline-block;padding:7px 0 5px}
+  .nabidka li+li::before{left:-14px;width:5px;height:5px}
+  .sokl-text p{font-size:14.5px;line-height:1.45;margin-top:8px}
+  .uvodnik,.ak-uvod,.pamet{grid-template-columns:1fr;align-items:start}
+  .tri{grid-template-columns:1fr;gap:20px}
+  .gen:nth-child(2),.gen:nth-child(3){margin-top:0}
+  .gen-hlava{height:236px}
+  .gen-stin{--m:.8}
+  .gen:nth-child(n) .gen-stin{right:13%}
+  .dve-zdi{grid-template-columns:1fr;margin-top:26px}
+  .stara{min-height:0;padding-bottom:150px}
+  .stara .pata .zel{height:22px}
+  .stara .o2{display:none}
+  .stara .o1{bottom:62px;left:62%}
+  .stara .o3{bottom:88px;left:30%}
+  .sklo{--pl:var(--okraj);margin-top:46px}
+  .sklo::before{top:-46px;height:46px}
+  .tr-rada,.tr-tridy,.mladez{grid-template-columns:1fr}
+  .tr-tridy{gap:18px}
+  .tr-sef{min-height:200px}
+  .tr-stin{--v:250px;right:12%}
+  .rimsa{height:112px;--m:.44}
+  .rimsa .stin{left:0}
+  .kemp-stin{--v:128px;right:14%}
+  .listi{width:62vw;opacity:.42}
+  .rust{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .rust li{padding-bottom:0}.rust li::after{bottom:-14px;position:relative;display:block;margin-bottom:26px;box-shadow:0 1px 0 rgba(70,48,16,.26),0 9px 10px -7px rgba(96,62,18,.42)}
+  .rust span{margin-bottom:10px}
+  .otisky{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .otisky li:nth-child(n){margin-top:0}
+  .otisky li:nth-child(even){margin-top:46px}
+  .ritual ol,.turnusy,.areal-co,.cl-dole{grid-template-columns:1fr}
+  .turnusy{gap:6px}
+  .vek{grid-template-columns:1fr}
+  .vek li{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;border-bottom:1px solid var(--linka);padding:12px 0}
+  .vek b{padding:0;order:2;font-size:28px}
+  .vek span{padding:0}
+  .zpravy li{grid-template-columns:1fr;gap:6px}
+  .kon{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .vybor ul{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:560px){
+  .hlava{padding:12px var(--okraj);gap:12px}
+  .burger{top:9px}
+  /* telefon: zeď má celou výšku pro tři stíny, tlačítka stojí na antuce */
+  .zedbox{--zem:112px;--fs:min(13.4vw,8.2vh)}
+  .sokl{display:block;padding:8px var(--okraj) 9px}
+  .sokl-text p{display:none}
+  .sokl-akce{position:absolute;left:var(--okraj);right:var(--okraj);top:calc(100% + 16px);flex-wrap:nowrap}
+  .sokl-akce .tl{flex:1 1 0;padding:15px 8px;font-size:15px;gap:8px}
+  .sokl-akce .tl-antuka{background:var(--natěr);box-shadow:0 12px 20px -12px rgba(40,12,0,.9)}
+  .sokl-akce .tl-linka.sv{color:#fff;border-color:rgba(255,255,255,.92);padding:13.5px 6px}
+  .znovu{bottom:2px;transform:none;min-height:40px}
+  .znak img{width:40px;height:40px}.znak b{font-size:18px}.znak small{font-size:10.5px}
+  body{font-size:16.5px}
+  .rust,.kon{grid-template-columns:1fr}
+  .rust li{margin-left:calc(var(--n) * 5.5%)}
+  .ceny .dve b{min-width:4.9em}.ceny b{font-size:17.5px}.ceny .zahlavi i{min-width:5.6em}
+  .sklo-ceny{grid-template-columns:1fr}
+  .pata-webu .obal{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="fig-mladsi" viewBox="-10 -50 880 1050"><path d="M494 150C501 139 516 130 530 128C544 126 567 127 578 136C589 145 594 165 596 180C598 195 595 213 590 226C585 239 576 252 566 258C556 264 541 266 530 262C519 258 507 248 500 236C493 224 489 206 488 192C487 178 487 161 494 150Z"/><path d="M578 150C586 148 624 164 636 170C648 176 650 182 650 186C650 190 644 192 634 192C624 192 597 191 588 184C579 177 570 152 578 150Z"/><path d="M507 238L510 229L517 222L525 217L535 216L544 218L553 223L559 231L562 240L561 250L556 299L552 309L544 318L534 323L523 325L512 323L502 317L495 308L491 297L492 285Z"/><path d="M446 300C455 292 469 284 486 280C503 276 530 276 548 278C566 280 582 283 592 290C602 297 608 304 610 322C612 340 609 375 606 400C603 425 592 448 590 470C588 492 589 512 592 530C595 548 621 568 606 580C592 592 537 599 505 600C473 601 426 596 412 584C399 572 420 549 424 530C428 511 435 492 436 470C437 448 431 423 430 400C429 377 427 347 430 330C433 313 437 308 446 300Z"/><path d="M433 277L443 270L456 268L468 270L479 276L487 286L491 297L492 310L487 322L479 331L437 367L426 373L414 375L402 373L392 367L384 358L379 346L379 334L383 323L391 313ZM393 315L403 310L414 308L425 309L435 315L442 324L446 334L446 345L442 356L435 365L390 397L382 402L372 404L363 402L354 398L348 390L344 381L344 371L348 362L354 355ZM396 361L399 370L400 380L397 389L391 397L383 402L373 404L363 403L355 398L348 391L305 307L302 300L302 293L304 287L309 281L314 277L321 276L328 277L334 280L339 285Z"/><path d="M298 270C305 264 322 259 330 262C338 265 345 279 346 288C347 297 343 312 336 318C329 324 314 325 306 322C298 319 291 307 290 298C289 289 291 276 298 270Z"/><path d="M571 337L562 330L556 319L554 308L556 296L562 286L571 278L582 274L594 275L605 279L646 303L655 311L660 321L662 332L660 344L654 354L645 361L635 365L623 365L612 361ZM614 358L605 352L600 342L598 332L600 321L606 312L614 305L624 302L634 302L644 306L683 333L690 339L695 347L697 356L695 365L690 373L683 379L674 382L665 382L657 379ZM680 381L671 383L661 381L653 377L647 370L644 361L644 352L647 343L653 336L660 331L751 304L758 303L764 304L770 307L774 312L777 318L777 325L775 331L771 336L765 340Z"/><path d="M748 302C752 295 770 296 778 298C786 300 795 309 796 316C797 323 791 336 784 340C777 344 762 348 756 342C750 336 744 309 748 302Z"/><path d="M410 541L422 524L438 513L458 508L478 510L496 519L510 534L518 552L520 572L514 591L472 675L460 691L444 702L425 707L405 705L388 696L374 682L366 664L364 644L370 625ZM379 630L389 617L402 608L418 604L434 605L448 612L459 624L466 639L467 655L463 670L411 749L404 759L394 766L382 769L370 767L360 762L351 753L346 742L345 730L349 719ZM345 733L348 721L354 711L364 703L375 700L387 700L398 704L407 713L413 723L415 735L416 788L414 801L407 812L396 820L384 824L370 824L358 819L348 810L342 798L340 785ZM340 785L343 772L350 761L360 752L373 748L386 749L398 754L408 763L415 774L416 788L394 909L392 915L389 921L383 925L377 928L370 927L364 925L358 920L355 914L354 907Z"/><path d="M504 601L495 583L492 563L496 544L507 527L523 515L542 508L563 509L581 517L596 531L654 608L663 626L666 646L661 665L651 681L635 693L616 699L597 698L578 691L564 678ZM572 671L565 657L563 641L566 625L575 612L588 602L603 597L619 598L634 604L646 615L696 699L701 710L703 722L700 733L694 744L684 751L673 755L660 754L649 749L640 741ZM633 724L634 712L639 701L647 692L658 687L670 685L682 688L692 695L699 704L703 716L713 773L712 786L707 798L697 808L686 814L672 815L659 812L648 805L640 794L637 781ZM637 781L637 768L643 756L652 746L664 740L677 739L690 742L701 749L709 760L713 773L710 908L709 915L706 921L702 926L696 929L689 930L682 928L676 924L672 919L670 912Z"/><path d="M354 900C363 893 389 890 398 898C407 906 410 933 410 946C410 959 415 971 400 978C385 985 338 989 318 988C298 987 286 980 282 974C278 968 286 956 296 950C306 944 334 946 344 938C354 930 345 907 354 900Z"/><path d="M670 902C678 893 704 894 714 900C724 906 717 927 730 936C743 945 777 947 790 954C803 961 807 970 806 976C805 982 804 986 784 988C764 990 703 992 684 986C665 980 670 966 668 952C666 938 662 911 670 902Z"/><path d="M344 309L346 313L347 318L346 324L343 328L339 331L334 333L329 333L324 331L320 327L243 226L241 222L240 218L241 213L243 209L247 207L251 205L256 205L260 207L263 210ZM266 218L268 222L269 225L268 229L266 232L263 234L260 235L256 235L253 234L250 231L214 185L212 182L212 178L212 175L214 172L217 170L220 168L224 168L227 170L230 172ZM230 178L230 181L228 184L226 186L223 187L221 187L218 186L215 184L214 182L213 179L212 84L213 81L214 79L216 77L219 76L222 76L225 77L227 78L229 81L229 84ZM224 170L227 172L229 174L230 176L230 179L230 182L228 184L226 186L223 187L220 187L128 164L125 162L123 160L122 158L122 155L122 152L124 149L126 148L129 147L132 147ZM69 -15L85 -24L103 -28L122 -28L142 -23L161 -14L179 -1L195 16L208 35L216 55L221 76L221 97L217 116L208 132L196 145L180 154L162 159L143 159L123 154L103 145L85 131L70 115L57 96L48 75L44 54L44 34L48 15L57 -2ZM77 -5L67 6L60 20L56 36L57 54L61 72L69 90L80 107L93 121L109 133L126 142L143 146L159 146L175 143L188 135L198 124L205 110L209 94L208 76L204 58L196 40L185 24L172 9L156 -3L139 -11L122 -16L105 -16L90 -12Z"/><path d="M76 -6L89 -14L105 -18L122 -18L140 -13L157 -5L173 7L187 22L198 39L206 58L210 76L211 94L207 111L200 126L189 137L175 145L160 149L143 148L125 144L108 135L92 123L78 108L67 91L59 73L54 54L54 36L58 19L65 5Z" fill-opacity=".42"/></symbol>
+  </defs>
+</svg>
+
+<header class="hlava" id="hlava">
+  <a class="znak" href="#uvod" aria-label="Tenis Satalice – úvod">
+    <img src="assets/logo/tk-satalice.svg" alt="" width="46" height="46">
+    <span><b>Tenis Satalice</b><small>SK Satalice · Praha&nbsp;9</small></span>
+  </a>
+  <nav class="menu" aria-label="Hlavní menu">
+    <a href="#generace">Kurty a&nbsp;ceník</a>
+    <a href="#padel">Padel</a>
+    <a href="#akademie">Akademie</a>
+    <a href="#klub">Klub</a>
+    <a href="#areal">Areál</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
+  <a class="tl tl-antuka tl-maly" href="https://www.rogeronline.cz/v2/?klub=197" target="_blank" rel="noopener">Rezervace</a>
+  <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="panel" aria-label="Otevřít menu"><i></i><i></i><i></i></button>
+</header>
+<nav class="panel" id="panel" aria-label="Menu">
+  <a class="p" href="#generace">Kurty a&nbsp;ceník</a>
+  <a class="p" href="#padel">Padel</a>
+  <a class="p" href="#akademie">Akademie a&nbsp;trenéři</a>
+  <a class="p" href="#klub">Klub</a>
+  <a class="p" href="#areal">Areál</a>
+  <a class="p" href="#clenstvi">Členství</a>
+  <a class="p" href="#kontakt">Kontakt</a>
+  <a class="tl tl-antuka" href="https://www.rogeronline.cz/v2/?klub=197" target="_blank" rel="noopener">Rezervovat kurt</a>
+  <p>Recepce <a href="tel:+420721069640">721&nbsp;069&nbsp;640</a></p>
+</nav>
+
+<main>
+<section class="scena" id="uvod">
+  <div class="zedbox" id="zedbox">
+    <canvas id="zed" aria-hidden="true"></canvas>
+    <h1 class="slova">
+      <span class="slovo s1">Starší,</span>
+      <span class="slovo s2">mladší,</span>
+      <span class="slovo s3">nejmladší<i>.</i></span>
+      <span class="skryte"> Tenisový klub SK Satalice, Praha&nbsp;9</span>
+    </h1>
+    <div class="sokl" id="sokl">
+      <div class="sokl-text" id="sokltext">
+        <ul class="nabidka" aria-label="Co klub nabízí">
+          <li><a href="#kurty">Tenis</a></li>
+          <li><a href="#padel">Padel</a></li>
+          <li><a href="#haly">Haly</a></li>
+          <li><a href="#akademie">Akademie</a></li>
+        </ul>
+        <p>Tenisový klub v&nbsp;Praze&nbsp;9 – Satalicích, v&nbsp;dnešním areálu od roku 1974. Antuka i&nbsp;umělý povrch, padel, v&nbsp;zimě haly, školička od tří let a&nbsp;akademie.</p>
+      </div>
+      <div class="sokl-akce" id="soklakce">
+        <a class="tl tl-antuka" href="https://www.rogeronline.cz/v2/?klub=197" target="_blank" rel="noopener">Rezervovat kurt <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a class="tl tl-linka sv" href="#akademie">Tenisová akademie</a>
+      </div>
+    </div>
+    <canvas id="svetlo" aria-hidden="true"></canvas>
+    <canvas id="mic" aria-hidden="true"></canvas>
+    <button class="znovu" id="znovu" type="button"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.5 8a5.5 5.5 0 1 1-1.7-4"/><path d="M12.2 1.6v2.7H9.5"/></svg>Přehrát úvod</button>
+  </div>
+</section>
+
+<!-- 1 · ráno -->
+<section class="zed generace" id="generace">
+  <div class="obal">
+    <div class="uvodnik">
+      <h2 class="h2 rv">Jeden klub, tři&nbsp;generace</h2>
+      <p class="rv">V&nbsp;historii satalického tenisu se příjmení opakují s&nbsp;dovětky st., ml. a&nbsp;nejml. Klub je od začátku zaměřený na mládež a&nbsp;každý věk tu má svůj dvorec, svůj trénink i&nbsp;svůj ceník.</p>
+    </div>
+
+    <div class="tri">
+      <article class="gen rv" id="kurty">
+        <div class="gen-hlava"><canvas class="stin gen-stin" data-fig="0" aria-hidden="true"></canvas><h3>Starší</h3></div>
+        <div class="cara"></div>
+        <p class="maly kdo">Dospělí, členové i&nbsp;hosté</p>
+        <h4><i class="otisk"></i>Venkovní dvorce</h4>
+        <ul class="ceny">
+          <li><span>Po–Pá 8–12</span><b>250&nbsp;Kč<small>/h</small></b></li>
+          <li><span>Po–Pá 12–21</span><b>280&nbsp;Kč<small>/h</small></b></li>
+          <li><span>So–Ne 8–20</span><b>250&nbsp;Kč<small>/h</small></b></li>
+        </ul>
+        <p class="pozn">Antuka i&nbsp;umělý povrch. <b>Členové klubu hrají venku zdarma.</b></p>
+        <h4 id="haly"><i class="otisk"></i>Zimní haly</h4>
+        <ul class="ceny">
+          <li><span>Po–Pá 9–21</span><b>600&nbsp;Kč<small>/h</small></b></li>
+          <li><span>So–Ne 9–21</span><b>500&nbsp;Kč<small>/h</small></b></li>
+        </ul>
+        <p class="pozn">Umělý povrch. Dlouhodobé zimní rezervace domlouvá Michal Bíško, <a href="tel:+420606836732">606&nbsp;836&nbsp;732</a>.</p>
+        <h4><i class="otisk"></i>Beachvolejbal</h4>
+        <ul class="ceny">
+          <li><span>Po–Ne</span><b>250&nbsp;Kč<small>/h</small></b></li>
+        </ul>
+        <p class="pozn">Hrací hodina trvá 55&nbsp;minut. Kartou Multisport lze platit jen při telefonické rezervaci na čísle <a href="tel:+420721069640">721&nbsp;069&nbsp;640</a>.</p>
+        <a class="tl tl-antuka" href="https://www.rogeronline.cz/v2/?klub=197" target="_blank" rel="noopener">Rezervovat kurt <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </article>
+
+      <article class="gen rv" id="treninky">
+        <div class="gen-hlava"><canvas class="stin gen-stin" data-fig="1" aria-hidden="true"></canvas><h3>Mladší</h3></div>
+        <div class="cara"></div>
+        <p class="maly kdo">Akademie · 6–18&nbsp;let a&nbsp;dospělí</p>
+        <p class="pozn" style="margin-top:0">Individuální hodiny i&nbsp;tréninky ve skupině. Plány sestavujeme tak, aby děti chodily na tenis rády.</p>
+        <h4><i class="otisk"></i>Trénink s&nbsp;trenérem, 60&nbsp;minut</h4>
+        <ul class="ceny">
+          <li class="zahlavi"><span>Cena za osobu</span><span class="pravo"><i>Jaro–podzim</i><i>Zima</i></span></li>
+          <li class="dve"><span>Individuál</span><span class="pravo"><b>690&nbsp;Kč</b><b>950&nbsp;Kč</b></span></li>
+          <li class="dve"><span>Dvojice</span><span class="pravo"><b>390&nbsp;Kč</b><b>550&nbsp;Kč</b></span></li>
+          <li class="dve"><span>Trojice</span><span class="pravo"><b>280&nbsp;Kč</b><b>450&nbsp;Kč</b></span></li>
+          <li class="dve"><span>Čtveřice</span><span class="pravo"><b>220&nbsp;Kč</b><b>350&nbsp;Kč</b></span></li>
+        </ul>
+        <p class="pozn">Ceny jsou včetně pronájmu kurtu nebo haly. Zima platí pro sezónu 2026/2027.</p>
+        <p class="pozn">Šéftrenér Michal Bíško, <b><a href="tel:+420606836732">606&nbsp;836&nbsp;732</a></b></p>
+        <a class="tl tl-linka" href="#akademie">Tenisová akademie</a>
+      </article>
+
+      <article class="gen rv" id="skolicka">
+        <div class="gen-hlava"><canvas class="stin gen-stin" data-fig="2" aria-hidden="true"></canvas><h3>Nejmladší</h3></div>
+        <div class="cara"></div>
+        <p class="maly kdo">Školička · 3–8&nbsp;let</p>
+        <p class="pozn" style="margin-top:0">Školička pro nejmenší tenisty. Ti pilní a&nbsp;talentovaní z&nbsp;ní mohou plynule přejít do závodních družstev.</p>
+        <h4><i class="otisk"></i>Školička</h4>
+        <ul class="ceny">
+          <li class="zahlavi"><span>Týdně</span><span class="pravo"><i>Jaro–podzim</i><i>Zima</i></span></li>
+          <li class="dve"><span>1×</span><span class="pravo"><b>1&nbsp;900&nbsp;Kč</b><b>4&nbsp;800&nbsp;Kč</b></span></li>
+          <li class="dve"><span>2×</span><span class="pravo"><b>3&nbsp;800&nbsp;Kč</b><b>9&nbsp;600&nbsp;Kč</b></span></li>
+          <li class="dve"><span>3×</span><span class="pravo"><b>5&nbsp;700&nbsp;Kč</b><b>14&nbsp;400&nbsp;Kč</b></span></li>
+        </ul>
+        <p class="pozn">Zima platí pro sezónu 2026/2027. <b>Děti do 7&nbsp;let mají členství v&nbsp;klubu zdarma.</b></p>
+        <a class="tl tl-linka" href="#treneri">Trenéři akademie</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 2 · poledne -->
+<section class="zed padel" id="padel">
+  <div class="obal">
+    <div class="uvodnik">
+      <h2 class="h2 rv">Od zdi ke&nbsp;sklu</h2>
+      <p class="rv">V&nbsp;roce 1974 měl klub odrazovou stěnu. V&nbsp;květnu 2026 přibyly padelové kurty, kde se míč od stěny vrací zpátky do hry.</p>
+    </div>
+  </div>
+  <div class="dve-zdi">
+    <div class="stara rv">
+      <p class="rok">1974</p>
+      <p>Odrazová stěna. Klub měl tehdy podle pamětníka „nejdříve 4 a&nbsp;po dostavbě 5&nbsp;antukových dvorců a&nbsp;odrazovou stěnu“.</p>
+      <i class="o1"></i><i class="o2"></i><i class="o3"></i>
+      <div class="pata"><i class="cara"></i><i class="zel"></i></div>
+    </div>
+    <div class="sklo">
+      <i class="spara"></i><i class="spara s2"></i>
+      <p class="rok rv">2026</p>
+      <h3 class="h2 rv">Nová zeď je ze&nbsp;skla.</h3>
+      <p class="perex rv">Padel je v&nbsp;Satalicích novinkou. Kurty se otevřely v&nbsp;květnu 2026 a&nbsp;rezervují se stejně jako tenis: online, nebo telefonicky na recepci.</p>
+      <dl class="sklo-ceny rv">
+        <div><dt>Po–Pá 8–22</dt><dd>590&nbsp;Kč<small>/h</small></dd></div>
+        <div><dt>So–Ne 8–22</dt><dd>540&nbsp;Kč<small>/h</small></dd></div>
+        <div><dt>Půjčení rakety Wilson</dt><dd>100&nbsp;Kč<small>/h</small></dd></div>
+        <div><dt>Míče Wilson, prodej na recepci</dt><dd>149&nbsp;Kč</dd></div>
+      </dl>
+      <div class="tlacitka rv">
+        <a class="tl tl-antuka" href="https://www.rogeronline.cz/v2/?klub=197" target="_blank" rel="noopener">Rezervovat padel <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a class="tl tl-linka sv" href="tel:+420721069640">Recepce 721&nbsp;069&nbsp;640</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · odpoledne -->
+<section class="zed akademie" id="akademie">
+  <div class="obal">
+    <div class="ak-uvod">
+      <div>
+        <h2 class="h2 rv">Každý věk potřebuje jiný přístup</h2>
+        <p class="perex rv">Chcete se vy nebo vaše děti naučit hrát tenis? Máte zájem o&nbsp;individuální hodiny či tréninky ve skupině? Naše tenisová škola má příjemné zázemí, dobrou dostupnost, přijatelnou cenu a&nbsp;profesionální tým trenérů.</p>
+        <p class="perex rv">Plány sestavujeme tak, aby děti chodily na tenis rády. Sport je přitom vede k&nbsp;trpělivosti, důslednosti, řádu, cílevědomosti a&nbsp;fair play.</p>
+        <p class="pozn rv" style="margin-top:18px;font-size:16px">Ceník tréninků a&nbsp;školičky najdete <a href="#treninky">u&nbsp;mladších a&nbsp;nejmladších</a>.</p>
+      </div>
+      <figure class="ak-foto rv">
+        <img src="assets/foto/antuka-deti.jpg" alt="Pět dětí s raketami u sítě na antukovém dvorci" width="1000" height="750" loading="lazy" decoding="async">
+        <figcaption>Nejmladší hráči klubu na antuce.</figcaption>
+      </figure>
+    </div>
+    <ol class="rust" aria-label="Stupně akademie podle věku">
+      <li class="rv" style="--n:0"><b>3–8&nbsp;<small>let</small></b><span>Školička</span></li>
+      <li class="rv" style="--n:1"><b>6–7&nbsp;<small>let</small></b><span>Přípravka a&nbsp;minitenis</span></li>
+      <li class="rv" style="--n:2"><b>8–9&nbsp;<small>let</small></b><span>Babytenis</span></li>
+      <li class="rv" style="--n:3"><b>10–12&nbsp;<small>let</small></b><span>Mladší žáci</span></li>
+      <li class="rv" style="--n:4"><b>13–18&nbsp;<small>let</small></b><span>Starší žáci a&nbsp;dorost</span></li>
+      <li class="rv" style="--n:5"><b>Dospělí</b><span>Individuálně i&nbsp;ve skupině</span></li>
+    </ol>
+  </div>
+  <div class="sokl-pas" id="treneri">
+    <div class="obal">
+      <div class="tr-hlava">
+        <h2 class="h2 rv">Trenéři</h2>
+        <p class="rv">Osm trenérů I. až III.&nbsp;třídy. Akademii vede šéftrenér Michal Bíško.</p>
+      </div>
+      <div class="tr-rada">
+        <div class="tr-sef rv">
+          <canvas class="stin tr-stin" data-fig="0" aria-hidden="true"></canvas>
+          <span class="maly">Šéftrenér akademie</span>
+          <b>Michal Bíško</b>
+          <i>II.&nbsp;třída</i>
+          <a href="tel:+420606836732">606&nbsp;836&nbsp;732</a>
+        </div>
+        <ul class="tr-tridy">
+          <li class="rv"><span class="maly">I.&nbsp;třída</span><b>Andrea Steinerová</b></li>
+          <li class="rv"><span class="maly">II.&nbsp;třída</span><b>Aneta Bíšková</b><b>Terezie Štěpánová</b></li>
+          <li class="rv"><span class="maly">III.&nbsp;třída</span><b>Klára Simonová</b><b>Šimon Dvořák</b><b>Jonáš Hoffman</b><b>Viktorie Horčičková</b></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · podvečer -->
+<section class="zed klub" id="klub">
+  <div class="obal">
+    <div class="uvodnik">
+      <h2 class="h2 rv">Zeď si pamatuje</h2>
+      <p class="rv">Každý míč nechá na stěně otisk antuky. Čtyři data z&nbsp;historie satalického tenisu.</p>
+    </div>
+    <ol class="otisky">
+      <li class="rv"><div class="zasah"><i></i><b>1947</b></div><p>Kolem tohoto roku vzniká první kurt „V&nbsp;Nové Vinoři“ a&nbsp;Klub přátel tenisu.</p></li>
+      <li class="rv"><div class="zasah"><i></i><b>1974</b></div><p><b>26.&nbsp;8.</b> začíná éra dnešního klubu. Areál má nejdřív čtyři, po dostavbě pět antukových dvorců a&nbsp;odrazovou stěnu.</p></li>
+      <li class="rv"><div class="zasah"><i></i><b>2007</b></div><p>Končí rozsáhlá rekonstrukce z&nbsp;let 2006–2007: nové dvorce, klubovna, šatny, restaurace a&nbsp;hotel.</p></li>
+      <li class="rv"><div class="zasah"><i></i><b>2026</b></div><p>V&nbsp;květnu se otevírají padelové kurty.</p></li>
+    </ol>
+
+    <div class="pamet">
+      <div>
+        <blockquote class="rv">„Dne 26.&nbsp;8.&nbsp;1974 zde začala éra satalického klubu. A&nbsp;opět u&nbsp;toho byl pan Bohumil Pechr tentokrát i&nbsp;se synem Bohoušem a&nbsp;dalšími nadšenci.“
+          <cite>Z&nbsp;historie klubu, jak ji sepsal pamětník</cite>
+        </blockquote>
+      </div>
+      <div class="rv">
+        <p class="maly" style="margin-bottom:14px">Jména, která se v&nbsp;historii klubu vracejí</p>
+        <ul class="dovetky">
+          <li><i>st.</i><span>Bohdanecký st., Bíško st.</span></li>
+          <li><i>ml.</i><span>Bohdanecký ml., Bíško&nbsp;M.&nbsp;ml., Brož&nbsp;J.&nbsp;ml.</span></li>
+          <li><i>nejml.</i><span>Bíško Milan nejml.</span></li>
+        </ul>
+        <p class="pozn">„Klub vedli doposud 4&nbsp;předsedové pan Brož, Bohdanecký st., Bíško st., Bohdanecký ml.“ A&nbsp;vedle nich pamětník jmenuje: Zakouřil J. a&nbsp;V., sestry Šenkovy, sestry Durasovy a&nbsp;bratři Kopřivové.</p>
+      </div>
+    </div>
+
+    <div class="mladez">
+      <p class="rv">Klub je od začátku zaměřený na mládež. Družstva hrají ve všech kategoriích, většinou I.&nbsp;a&nbsp;II.&nbsp;třídu. „V&nbsp;klubu máme i&nbsp;školičku pro nejmenší tenisty, a&nbsp;ti pilní a&nbsp;talentovaní mají možnosti plynule přejít do závodních družstev.“</p>
+      <figure class="klub-foto rv">
+        <img src="assets/foto/antuka-tym-siroka.jpg" alt="Mladí hráči klubu u sítě na antukovém dvorci" width="2000" height="924" loading="lazy" decoding="async">
+        <figcaption class="popisek">Mládež klubu na antuce.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · rituál -->
+<section class="ritual" id="ritual">
+  <div class="obal">
+    <h2 class="h2 rv">Co na antuce umí každý člen</h2>
+    <ol>
+      <li class="rv"><b>Nakropit</b><p>„Před hraním je povinností hráčů, pokud je dvorec suchý, dvorec řádně nakropit – nejen hrací plochu, ale i&nbsp;prostor za základní čarou až k&nbsp;plotu a&nbsp;mezi dvorci. Kropíme z&nbsp;výšky, nikoli do země.“</p></li>
+      <li class="rv"><b>Urovnat</b><p>„Po ukončení hry hráči dvorce nejdříve řádně urovnají dřevěnými hrably…“</p></li>
+      <li class="rv"><b>Přesíťovat</b><p>„…a&nbsp;potom přesíťují síťovačkou, po celé ploše kurtu, až k&nbsp;jeho oplocení. Použité nářadí zavěsí zpět na háčky v&nbsp;oplocení.“</p></li>
+    </ol>
+    <p class="pozn rv">Z&nbsp;hracího řádu klubu. Upravený dvorec se následující dvojici předává vždy v&nbsp;celou hodinu.</p>
+  </div>
+</section>
+
+<!-- 6 · kempy -->
+<section class="zed kempy" id="kempy">
+  <div class="obal">
+    <div class="uvodnik">
+      <h2 class="h2 rv">Příměstské kempy</h2>
+      <p class="rv">V&nbsp;létě 2026 proběhly tři turnusy příměstského kempu.</p>
+    </div>
+    <ol class="turnusy">
+      <li class="rv"><span class="maly">1.&nbsp;turnus</span><b>27.–31.&nbsp;7.</b></li>
+      <li class="rv"><span class="maly">2.&nbsp;turnus</span><b>3.–7.&nbsp;8.</b></li>
+      <li class="rv"><span class="maly">3.&nbsp;turnus</span><b>24.–28.&nbsp;8.</b></li>
+      <li aria-hidden="true" style="display:contents"><canvas class="stin kemp-stin" data-fig="2"></canvas></li>
+    </ol>
+    <div class="pod rv">
+      <p class="pozn" style="font-size:16.5px">Termíny na léto 2027 zatím nejsou zveřejněné.</p>
+      <p class="pozn" style="font-size:16.5px">Recepce klubu: <a href="tel:+420721069640">721&nbsp;069&nbsp;640</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- 7 · areál -->
+<section class="zed areal" id="areal">
+  <canvas class="listi" aria-hidden="true"></canvas>
+  <div class="obal">
+    <div class="uvodnik">
+      <h2 class="h2 rv">Areál u&nbsp;Arborky</h2>
+      <p class="rv">Devět venkovních dvorců, v&nbsp;zimě nafukovací haly, padel, beachvolejbal a&nbsp;klubovna s&nbsp;restaurací.</p>
+    </div>
+    <ul class="areal-co">
+      <li class="rv"><b>9&nbsp;venkovních dvorců</b>Antuka a&nbsp;umělý povrch.</li>
+      <li class="rv"><b>Zimní haly</b>Nafukovací, s&nbsp;umělým povrchem. Topení se spouští automaticky podle rezervace.</li>
+      <li class="rv"><b>Padelové kurty</b>Nové, otevřené v&nbsp;květnu 2026.</li>
+      <li class="rv"><b>Beachvolejbal</b>Pískový kurt, Po–Ne 250&nbsp;Kč/h.</li>
+      <li class="rv"><b>Klubovna</b>Recepce, šatny, restaurace, hotel a&nbsp;fitness.</li>
+      <li class="rv"><b>Hrací hodina</b>Trvá 55&nbsp;minut, dvorec se předává v&nbsp;celou.</li>
+    </ul>
+  </div>
+  <figure>
+    <img src="assets/foto/areal.jpg" alt="Letecký snímek areálu tenisového klubu SK Satalice" width="1600" height="900" loading="lazy">
+    <figcaption class="popisek">Letecký pohled na areál. Padelové kurty na snímku ještě nejsou.</figcaption>
+  </figure>
+</section>
+
+<!-- 8 · členství -->
+<section class="zed clenstvi" id="clenstvi">
+  <div class="obal">
+    <div class="uvodnik">
+      <h2 class="h2 rv">Členství od dětí po seniory</h2>
+      <p class="rv">Roční příspěvek se řídí věkem. <b>Členové hrají na venkovních dvorcích zdarma.</b></p>
+    </div>
+    <div class="rimsa" aria-hidden="true">
+      <span><canvas class="stin" data-fig="2" style="--v:106px"></canvas></span>
+      <span><canvas class="stin zrc" data-fig="2" style="--v:140px"></canvas></span>
+      <span><canvas class="stin" data-fig="1" style="--v:178px"></canvas></span>
+      <span><canvas class="stin" data-fig="0" style="--v:228px"></canvas></span>
+      <span><canvas class="stin zrc" data-fig="1" style="--v:188px"></canvas></span>
+    </div>
+    <ol class="vek">
+      <li class="rv"><b>zdarma</b><span>Děti<i>do 7&nbsp;let</i></span></li>
+      <li class="rv"><b>1&nbsp;500&nbsp;<small>Kč</small></b><span>Žáci<i>8–14&nbsp;let</i></span></li>
+      <li class="rv"><b>2&nbsp;000&nbsp;<small>Kč</small></b><span>Dorost<i>15–18&nbsp;let</i></span></li>
+      <li class="rv"><b>3&nbsp;500&nbsp;<small>Kč</small></b><span>Dospělí<i>19–59&nbsp;let</i></span></li>
+      <li class="rv"><b>2&nbsp;500&nbsp;<small>Kč</small></b><span>Senioři<i>60+</i></span></li>
+    </ol>
+    <div class="cl-dole">
+      <div class="rv"><h3 class="h3">Vstupní příspěvek</h3><p>5&nbsp;000&nbsp;Kč. Do 18&nbsp;let, studující a&nbsp;důchodci 2&nbsp;500&nbsp;Kč, mládež do 14&nbsp;let neplatí.</p></div>
+      <div class="rv"><h3 class="h3">Skříňka</h3><p>300&nbsp;Kč na rok.</p></div>
+      <div class="rv"><h3 class="h3">Venkovní dvorce</h3><p>Členové klubu na nich hrají zdarma.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 9 · aktuality -->
+<section class="zed aktuality" id="aktuality">
+  <div class="obal">
+    <h2 class="h2 rv">Aktuality</h2>
+    <ul class="zpravy">
+      <li class="rv"><span class="bezdata">Padel</span><b>Padelové kurty již postavené, můžete volat na rezervaci kurtu<time datetime="2026-05-25">25.&nbsp;5.&nbsp;2026</time></b><a class="odkaz" href="#padel">K&nbsp;padelu</a></li>
+      <li class="rv"><span class="bezdata">Kempy</span><b>Příměstský camp 2026 – tři turnusy<time datetime="2025-10-23">23.&nbsp;10.&nbsp;2025</time></b><a class="odkaz" href="#kempy">Ke kempům</a></li>
+      <li class="rv"><span class="bezdata">Akademie</span><b>Ceník akademie na zimu 2026/2027</b><a class="odkaz" href="#treninky">K&nbsp;ceníku</a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 10 · partneři -->
+<section class="partneri" id="partneri" aria-label="Partneři klubu">
+  <div class="obal">
+    <p class="maly">Partneři klubu</p>
+    <ul>
+      <li><img src="assets/partneri/mc-satalice.png" alt="MČ Praha-Satalice" width="150" height="155" loading="lazy" decoding="async"></li>
+      <li><img src="assets/partneri/elektrizace-zeleznic.png" alt="Elektrizace železnic Praha" width="150" height="155" loading="lazy" decoding="async"></li>
+      <li><img src="assets/partneri/sport-technik-bohemia.png" alt="Sport-Technik Bohemia" width="150" height="155" loading="lazy" decoding="async"></li>
+      <li class="sirsi"><img src="assets/partneri/babolat.png" alt="Babolat" width="343" height="83" loading="lazy" decoding="async"></li>
+      <li><img src="assets/partneri/net4gas.png" alt="NET4GAS" width="150" height="150" loading="lazy" decoding="async"></li>
+      <li class="sirsi"><img src="assets/partneri/pracom.png" alt="Pracom" width="156" height="85" loading="lazy" decoding="async"></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 11 · soumrak -->
+<section class="kontakt na-tmave" id="kontakt">
+  <div class="obal">
+    <div class="uvodnik">
+      <h2 class="h2 rv">Přijďte si zahrát</h2>
+      <p class="rv" style="color:rgba(234,230,220,.86)">Kurt si zarezervujete online, nebo zavoláte na recepci.</p>
+    </div>
+    <div class="kon">
+      <div class="rv">
+        <h3 class="maly">Adresa a&nbsp;recepce</h3>
+        <p>Tenisový klub SK Satalice<br>U&nbsp;Arborky 397<br>190&nbsp;15 Praha&nbsp;9 – Satalice</p>
+        <p><a class="velke" href="tel:+420721069640">721&nbsp;069&nbsp;640</a></p>
+        <a class="tl tl-antuka tl-maly" href="https://www.rogeronline.cz/v2/?klub=197" target="_blank" rel="noopener">Rezervovat online</a>
+      </div>
+      <div class="rv">
+        <h3 class="maly">Doprava</h3>
+        <p>Autobusem od metra Rajská zahrada (Černý Most).</p>
+        <p>Autem z&nbsp;Chlumecké přes Kyje-Hrádek nebo z&nbsp;Letňan přes Kbely, k&nbsp;fotbalovému hřišti v&nbsp;ulici U&nbsp;Arborky.</p>
+        <p><a href="https://mapy.cz/zakladni?q=U%20Arborky%20397%2C%20Praha%209%20Satalice" target="_blank" rel="noopener">Otevřít v&nbsp;mapě</a></p>
+      </div>
+      <div class="rv">
+        <h3 class="maly">Akademie</h3>
+        <p>Michal Bíško, šéftrenér</p>
+        <p><a class="velke" href="tel:+420606836732">606&nbsp;836&nbsp;732</a></p>
+        <p><a href="mailto:tenissatalice@seznam.cz">tenissatalice@seznam.cz</a></p>
+      </div>
+      <div class="rv">
+        <h3 class="maly">Sledujte nás</h3>
+        <p><a href="https://www.instagram.com/sk_satalice_tenis/" target="_blank" rel="noopener">Instagram</a></p>
+        <p><a href="https://www.facebook.com/groups/717284091727959/" target="_blank" rel="noopener">Facebook</a></p>
+        <p style="color:rgba(234,230,220,.7);font-size:15px">Kartou Multisport lze platit jen při telefonické rezervaci.</p>
+      </div>
+    </div>
+  </div>
+  <div class="vybor">
+    <div class="obal">
+      <p class="maly">Výbor oddílu</p>
+      <ul>
+        <li><b>Milan Bíško</b><span>předseda</span></li>
+        <li><b>Michal Bohdanecký</b><span>místopředseda</span></li>
+        <li><b>Věra Pisaríková</b><span>sekretář, kontakt s&nbsp;ČTS</span></li>
+        <li><b>Jan Martinec</b><span>ekonom</span></li>
+        <li><b>Jaroslav Malý</b><span>pokladník</span></li>
+        <li><b>Milan Kopřiva</b><span>péče o&nbsp;mládež</span></li>
+        <li><b>Eva Vyskočilová</b><span>zástupce hráčů</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="pata-webu">
+  <div class="obal">
+    <span>© Tenisový klub SK Satalice · U&nbsp;Arborky 397, Praha&nbsp;9</span>
+    <span class="vpravo"><a href="#uvod">Nahoru</a><a class="pl-podpis" href="https://www.matchpulse.cz/pl/#weby" target="_blank" rel="noopener"><svg class="pl-podpis__logo" viewBox="0 0 64 64" width="20" height="20" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="14" fill="#16181d"/><path fill="#f3f1ea" d="M6.58 51V12.91H22.46Q26.14 12.91 28.48 14.48Q30.81 16.05 31.92 18.88Q33.03 21.72 33.03 25.51Q33.03 29.41 31.84 32.36Q30.65 35.3 28.3 36.97Q25.94 38.63 22.38 38.63H16.34V51ZM16.34 30.83H20.11Q21.79 30.83 22.48 29.42Q23.18 28.01 23.18 25.77Q23.18 24.18 22.89 23.07Q22.6 21.96 21.91 21.38Q21.22 20.8 20.04 20.8H16.34ZM36.49 51V12.91H46.25V42.73H59.56V51Z"/><circle class="pl-podpis__mic" cx="52.5" cy="12.5" r="5.5" fill="#d9ef3f"/></svg><span>Design a vývoj <strong>Petr Luxa</strong></span></a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+'use strict';
+var html=document.documentElement;
+var D=6.2;                                   // délka úvodu v sekundách
+var q=new URLSearchParams(location.search).get('uvod');
+var rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+var byl=false;try{byl=sessionStorage.getItem('satalice-uvod-04')==='1';}catch(e){}
+
+var box=document.getElementById('zedbox'),cZ=document.getElementById('zed'),cS=document.getElementById('svetlo'),cM=document.getElementById('mic');
+var xZ=cZ.getContext('2d'),xS=cS.getContext('2d'),xM=cM.getContext('2d');
+var sokl=document.getElementById('sokl'),soklText=document.getElementById('sokltext'),soklAkce=document.getElementById('soklakce'),znovu=document.getElementById('znovu');
+var slova=[].slice.call(document.querySelectorAll('.slovo'));
+
+var dpr=1,W=0,H=0,G=null,textura=null,postavy=[],vrstva=null,xV=null,listi=null,listiY=70,I=null,rb=8,pripraveno=false,tTed=D,bezi=false,t0=0,raf=0,klid=false,tKlid=0,videt=true,zedT=-1,posl='';
+var podani=new Image();
+var SHADE='rgb(158,134,128)';
+var SKOS=.15;
+
+function rng(s){return function(){s|=0;s=s+0x6D2B79F5|0;var t=Math.imul(s^s>>>15,1|s);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+function cl(x){return x<0?0:x>1?1:x;}
+function inOut(x){x=cl(x);return x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2;}
+function smooth(x){x=cl(x);return x*x*(3-2*x);}
+function mix(a,b,k){return a+(b-a)*k;}
+function platno(w,h){var c=document.createElement('canvas');c.width=Math.max(1,Math.round(w));c.height=Math.max(1,Math.round(h));return c;}
+
+/* zrno omítky: jedna dlaždice pro titulku i pro sekce */
+var zrno=null;
+function zrnoTile(){
+  if(zrno)return zrno;
+  var c=platno(220,220),x=c.getContext('2d'),d=x.createImageData(220,220),r=rng(9),i;
+  for(i=0;i<d.data.length;i+=4){var v=r()<.5?0:255;d.data[i]=d.data[i+1]=d.data[i+2]=v;d.data[i+3]=r()*r()*26;}
+  x.putImageData(d,0,0);zrno=c;return c;
+}
+
+/* otisk míče od antuky */
+function otisk(x,cx,cy,rad,a,r,zrn){
+  x.save();x.translate(cx,cy);x.rotate(r()*6.283);x.scale(1,.86+r()*.18);
+  var g=x.createRadialGradient(0,0,rad*.1,0,0,rad);
+  g.addColorStop(0,'rgba(204,112,62,'+(a*.5)+')');g.addColorStop(.7,'rgba(200,98,48,'+a+')');g.addColorStop(.9,'rgba(198,96,46,'+(a*.5)+')');g.addColorStop(1,'rgba(196,96,48,0)');
+  x.fillStyle=g;x.beginPath();x.arc(0,0,rad,0,6.283);x.fill();
+  for(var j=0,nz=zrn===undefined?18:zrn;j<nz;j++){var an=r()*6.283,d=Math.sqrt(r())*rad*1.25,s=(.5+r()*1.1)*Math.max(1,rad/14);x.fillStyle='rgba(188,88,42,'+(a*(.35+r()*.6))+')';x.fillRect(Math.cos(an)*d,Math.sin(an)*d,s,s);}
+  x.restore();
+}
+
+/* procedurální zeď: čerstvá omítka, bílá čára ve výšce sítě, zelený sokl, antuka u paty */
+function zed(x,w,h,g,seed){
+  var r=rng(seed),i,gx,gy,rad,a,len,lg,rg;
+  var yN=g.yN,yG=g.yG,lh=g.lh,yL=yN-lh;
+  lg=x.createLinearGradient(0,0,0,yL);lg.addColorStop(0,'#f1ede4');lg.addColorStop(.6,'#f4f0e8');lg.addColorStop(1,'#efeae0');
+  x.fillStyle=lg;x.fillRect(0,0,w,h);
+  // sotva znatelné vlnění hlazené omítky
+  for(i=0;i<Math.round(w*yL/60000);i++){gx=r()*w;gy=r()*yL;rad=(.12+r()*.22)*Math.max(w,520);a=.012+r()*.02;var k=r()<.5?'120,104,84':'255,255,255';
+    rg=x.createRadialGradient(gx,gy,0,gx,gy,rad);rg.addColorStop(0,'rgba('+k+','+a+')');rg.addColorStop(1,'rgba('+k+',0)');x.fillStyle=rg;x.fillRect(gx-rad,gy-rad,rad*2,rad*2);}
+  // jemné póry štuku
+  for(i=0;i<Math.round(w*yL/900);i++){gx=r()*w;gy=r()*yL;a=.5+r()*.9;x.fillStyle=r()<.55?'rgba(96,84,66,'+(.05+r()*.09)+')':'rgba(255,255,255,'+(.2+r()*.3)+')';x.fillRect(gx,gy,a,a);}
+  // sokl: hluboká klubová zelená, matný nátěr válečkem
+  lg=x.createLinearGradient(0,yN,0,yG);lg.addColorStop(0,'#135239');lg.addColorStop(.5,'#0f4731');lg.addColorStop(1,'#0c3b29');x.fillStyle=lg;x.fillRect(0,yN,w,yG-yN);
+  for(i=0;i<Math.round(w*(yG-yN)/2600);i++){gx=r()*w;gy=yN+r()*(yG-yN);len=60+r()*260;
+    x.fillStyle=r()<.5?'rgba(255,255,255,'+(.006+r()*.016)+')':'rgba(0,20,10,'+(.012+r()*.03)+')';x.fillRect(gx,gy,len,1+r()*2.4);}
+  // jemný antukový prach těsně nad zemí
+  lg=x.createLinearGradient(0,yG,0,yG-(yG-yN)*.3);lg.addColorStop(0,'rgba(198,106,58,.34)');lg.addColorStop(1,'rgba(192,102,56,0)');x.fillStyle=lg;x.fillRect(0,yN,w,yG-yN);
+  // bílá čára ve výšce sítě: čistá, s tenkou hranou stínu pod ní
+  x.fillStyle='#fffefb';x.fillRect(0,yL,w,lh);
+  x.fillStyle='rgba(60,50,34,.13)';x.fillRect(0,yL-1,w,1);
+  x.fillStyle='rgba(0,16,8,.35)';x.fillRect(0,yN,w,1.2);
+  // několik přesných otisků míčů
+  var mist=g.otisky||[];
+  for(i=0;i<mist.length;i++)otisk(x,mist[i][0]*w,mist[i][1]*h,g.rb*(.92+r()*.16),mist[i][2],r);
+  // antuka u paty zdi
+  lg=x.createLinearGradient(0,yG,0,h);lg.addColorStop(0,'#a74c25');lg.addColorStop(1,'#c5652f');x.fillStyle=lg;x.fillRect(0,yG,w,h-yG);
+  for(i=0;i<Math.round(w*(h-yG)/7);i++){gx=r()*w;gy=yG+r()*(h-yG);a=.5+r()*1.5*(.6+(gy-yG)/(h-yG));x.fillStyle=r()<.5?'rgba(240,154,100,'+(.1+r()*.26)+')':'rgba(84,30,10,'+(.1+r()*.24)+')';x.fillRect(gx,gy,a,a*.7);}
+  lg=x.createLinearGradient(0,yG,0,yG+Math.max(8,(h-yG)*.3));lg.addColorStop(0,'rgba(44,18,6,.5)');lg.addColorStop(1,'rgba(44,18,6,0)');x.fillStyle=lg;x.fillRect(0,yG,w,h-yG);
+  x.fillStyle='rgba(24,10,4,.55)';x.fillRect(0,yG-.6,w,1.4);
+}
+function zrnoPres(x,cw,ch){x.save();x.setTransform(1,0,0,1,0,0);x.fillStyle=x.createPattern(zrnoTile(),'repeat');x.fillRect(0,0,cw,ch);x.restore();}
+
+/* rozmazání alfy třemi průchody krabicového filtru (≈ Gauss): stejný výsledek v Chromiu i ve WebKitu */
+function rozmazAlfu(a,w,h,R){
+  if(R<1)return a;
+  var b=new Float32Array(a.length),n=2*R+1,pr,x,y,o,s;
+  for(pr=0;pr<3;pr++){
+    for(y=0;y<h;y++){o=y*w;s=0;for(x=-R;x<=R;x++)s+=a[o+(x<0?0:x>=w?w-1:x)];
+      for(x=0;x<w;x++){b[o+x]=s/n;s+=a[o+(x+R+1>=w?w-1:x+R+1)]-a[o+(x-R<0?0:x-R)];}}
+    for(x=0;x<w;x++){s=0;for(y=-R;y<=R;y++)s+=b[(y<0?0:y>=h?h-1:y)*w+x];
+      for(y=0;y<h;y++){a[y*w+x]=s/n;s+=b[(y+R+1>=h?h-1:y+R+1)*w+x]-b[(y-R<0?0:y-R)*w+x];}}
+  }
+  return a;
+}
+function alfa(c){var d=c.getContext('2d').getImageData(0,0,c.width,c.height),n=c.width*c.height,a=new Float32Array(n),i;for(i=0;i<n;i++)a[i]=d.data[i*4+3];return a;}
+function zAlfy(a,w,h){var c=platno(w,h),x=c.getContext('2d'),d=x.createImageData(w,h),n=w*h,i,j;
+  for(i=0,j=0;i<n;i++,j+=4){d.data[j]=158;d.data[j+1]=134;d.data[j+2]=128;d.data[j+3]=a[i];}
+  x.putImageData(d,0,0);return c;}
+/* náhradní rozmazání půlením a zdvojováním (jen kdyby plátno nedalo přístup k bodům) */
+function rozmaz(src,n){
+  var c=src,i,d,x,vel=[[src.width,src.height]];
+  for(i=0;i<n;i++){d=platno(Math.ceil(c.width/2),Math.ceil(c.height/2));x=d.getContext('2d');x.imageSmoothingEnabled=true;x.imageSmoothingQuality='high';x.drawImage(c,0,0,d.width,d.height);c=d;vel.push([d.width,d.height]);}
+  for(i=n-1;i>=0;i--){d=platno(vel[i][0],vel[i][1]);x=d.getContext('2d');x.imageSmoothingEnabled=true;x.imageSmoothingQuality='high';x.drawImage(c,0,0,d.width,d.height);c=d;}
+  return c;
+}
+
+/* ---- tři postavy: zdrojové siluety ---- */
+function cesty(id){
+  var s=document.getElementById(id),out={telo:[],vyplet:[]};if(!s||!window.Path2D)return out;
+  [].forEach.call(s.querySelectorAll('path'),function(p){(p.getAttribute('fill-opacity')?out.vyplet:out.telo).push(new Path2D(p.getAttribute('d')));});
+  return out;
+}
+function koncetina(x,b){ // zúžený tah přes body [x,y,šířka]
+  for(var i=0;i<b.length-1;i++){var p=b[i],q=b[i+1],an=Math.atan2(q[1]-p[1],q[0]-p[0])+Math.PI/2,cx=Math.cos(an),sy=Math.sin(an);
+    x.beginPath();x.moveTo(p[0]+cx*p[2]/2,p[1]+sy*p[2]/2);x.lineTo(q[0]+cx*q[2]/2,q[1]+sy*q[2]/2);x.lineTo(q[0]-cx*q[2]/2,q[1]-sy*q[2]/2);x.lineTo(p[0]-cx*p[2]/2,p[1]-sy*p[2]/2);x.closePath();x.fill();
+    x.beginPath();x.arc(q[0],q[1],q[2]/2,0,6.283);x.fill();}
+}
+function oblina(x,b,t){x.beginPath();x.moveTo(b[0][0],b[0][1]);for(var i=1;i<b.length;i++)x.lineTo(b[i][0],b[i][1]);x.closePath();x.fill();x.lineJoin='round';x.lineWidth=t;x.stroke();}
+/* nejmladší: váha na jedné noze, druhá pokrčená, raketa připravená nad ramenem, volná ruka míří k míči */
+function nejmladsi(x){
+  x.save();x.translate(30,70);x.strokeStyle=x.fillStyle;x.lineCap='round';
+  x.beginPath();x.ellipse(338,150,72,83,-.1,0,6.283);x.fill();                                   // hlava
+  x.beginPath();x.moveTo(284,94);x.quadraticCurveTo(234,102,198,138);x.quadraticCurveTo(242,147,286,140);x.closePath();x.fill();   // kšilt
+  x.beginPath();x.ellipse(408,178,33,20,.95,0,6.283);x.fill();                                    // culík
+  koncetina(x,[[344,222,54],[350,262,74]]);
+  oblina(x,[[300,300],[428,290],[410,430],[426,542],[290,550],[308,432]],38);                     // trup
+  oblina(x,[[284,548],[436,540],[466,672],[392,686],[362,628],[340,690],[258,680]],20);           // kraťasy
+  koncetina(x,[[306,650,88],[298,792,62],[296,862,60],[290,966,38]]);                             // stojná noha
+  x.beginPath();x.ellipse(264,1002,60,23,-.05,0,6.283);x.fill();
+  koncetina(x,[[414,650,86],[468,782,60],[462,850,56],[440,958,36]]);                             // volná noha
+  x.beginPath();x.ellipse(470,996,58,22,-.3,0,6.283);x.fill();
+  koncetina(x,[[434,304,56],[516,386,44],[566,304,32]]);                                          // paže s raketou
+  x.beginPath();x.arc(570,292,26,0,6.283);x.fill();
+  x.lineWidth=16;x.beginPath();x.moveTo(568,300);x.lineTo(616,184);x.stroke();
+  x.lineWidth=8;x.beginPath();x.moveTo(616,184);x.lineTo(612,132);x.moveTo(616,184);x.lineTo(662,152);x.stroke();
+  x.save();x.translate(660,82);x.rotate(.38);x.lineWidth=13;x.beginPath();x.ellipse(0,0,66,90,0,0,6.283);x.stroke();
+  x.globalAlpha=.42;x.beginPath();x.ellipse(0,0,62,86,0,0,6.283);x.fill();x.restore();
+  koncetina(x,[[296,310,52],[228,390,42],[164,372,31]]);                                          // volná paže
+  x.beginPath();x.arc(150,368,23,0,6.283);x.fill();
+  x.restore();
+}
+var ZDROJ=[
+  {sw:985,sh:1960,cx:480,nohy:1948,start:.70,konec:.215,kresli:function(x){
+    try{x.drawImage(podani,0,0,985,1488);}catch(e){}
+    koncetina(x,[[233,1470,128],[214,1580,124],[188,1700,96],[170,1830,60],[166,1890,58]]);
+    koncetina(x,[[752,1470,106],[764,1580,112],[782,1700,90],[796,1830,58],[800,1890,56]]);
+    x.beginPath();x.ellipse(126,1918,98,32,-.06,0,6.283);x.fill();x.beginPath();x.ellipse(846,1918,98,32,.06,0,6.283);x.fill();}},
+  {sw:880,sh:1050,cx:556,nohy:1038,start:.66,konec:.17,id:'fig-mladsi',ox:10,oy:50},
+  {sw:800,sh:1130,cx:368,nohy:1096,start:.60,konec:.13,kresli:nejmladsi}
+];
+ZDROJ.forEach(function(z){if(z.id){var c=cesty(z.id);z.kresli=function(x){x.save();x.translate(z.ox,z.oy);c.telo.forEach(function(p){x.fill(p);});x.globalAlpha=.42;c.vyplet.forEach(function(p){x.fill(p);});x.restore();};}});
+
+/* stín postavy v měřítku s: u země ostřejší, s výškou měkčí a světlejší; kolem siluety je rezerva, aby se polostín neuřízl */
+function stin(z,s){
+  var tot=z.nohy*s,R2=Math.max(1,Math.round(tot*.0065)),R1=Math.max(1,Math.round(R2/3)),pad=3*R2+3;
+  var w=Math.ceil(z.sw*s)+2*pad,h=Math.ceil(z.sh*s)+2*pad,base=platno(w,h),x=base.getContext('2d'),out;
+  x.translate(pad,pad);x.scale(s,s);x.fillStyle=x.strokeStyle='#000';z.kresli(x);
+  var yc=z.nohy*(1-z.konec)*s+pad,y0=pad+(yc-pad)*.28;
+  try{
+    var ost=alfa(base),mek=rozmazAlfu(new Float32Array(ost),w,h,R2),i,n=w*h,y,k,v;
+    rozmazAlfu(ost,w,h,R1);
+    for(i=0;i<n;i++){y=(i/w)|0;k=cl((y-y0)/(yc-y0));v=cl((y-pad)/((yc-pad)*.7));mek[i]=(mek[i]*(1-k)+ost[i]*k)*(.8+.2*v);}
+    out=zAlfy(mek,w,h);
+  }catch(e){
+    out=platno(w,h);var xo=out.getContext('2d');xo.drawImage(rozmaz(base,2),0,0);xo.globalCompositeOperation='source-in';xo.fillStyle=SHADE;xo.fillRect(0,0,w,h);
+  }
+  return {c:out,pad:pad};
+}
+
+/* stín větve s listy (pro roh zdi a pro sekci Areál) */
+function listiPlatno(w,h,seed){
+  var c=platno(w,h),x=c.getContext('2d'),r=rng(seed),k=w/420;
+  x.fillStyle=x.strokeStyle='#000';x.lineCap='round';
+  function list(px,py,an,len){x.save();x.translate(px,py);x.rotate(an);x.globalAlpha=.55+r()*.45;x.beginPath();x.moveTo(0,0);x.quadraticCurveTo(len*.45,-len*.34,len,0);x.quadraticCurveTo(len*.45,len*.34,0,0);x.fill();x.restore();}
+  function vetev(px,py,an,len,tl,hl){
+    var st=13*k,n=Math.round(len/st),i,str=1,nx,ny;
+    for(i=0;i<n;i++){nx=px+Math.cos(an)*st;ny=py+Math.sin(an)*st;
+      x.lineWidth=Math.max(.8,tl*(1-i/n));x.beginPath();x.moveTo(px,py);x.lineTo(nx,ny);x.stroke();px=nx;py=ny;
+      an+=(r()-.5)*.22+.012;
+      if(i>1){str=-str;list(px,py,an+str*(.55+r()*.5),(26+r()*22)*k*(1-i/n*.35));if(r()<.35)list(px,py,an-str*(.5+r()*.5),(20+r()*18)*k);}
+      if(hl>0&&i>2&&r()<.2)vetev(px,py,an+(r()<.5?-1:1)*(.5+r()*.4),len*(.3+r()*.25),tl*.5,hl-1);}
+    list(px,py,an,30*k);
+  }
+  vetev(w+6*k,h*.06,2.62,w*.82,5*k,2);
+  vetev(w+6*k,h*.34,2.86,w*.6,4*k,2);
+  vetev(w+6*k,h*.62,3.02,w*.42,3.4*k,1);
+  return c;
+}
+function listiStin(w,h,seed,R){var c=listiPlatno(w,h,seed),a=rozmazAlfu(alfa(c),w,h,R),i,y,k;for(i=0;i<a.length;i++){y=(i/w)|0;k=cl(y/(h*.16))*cl((h-y)/(h*.2))*cl((i%w)/(w*.12));a[i]*=k*k*(3-2*k);}return zAlfy(a,w,h);}
+
+function klic(){var r=box.getBoundingClientRect();return Math.round(r.width)+'x'+Math.round(r.height)+'/'+sokl.offsetTop+'/'+sokl.offsetHeight+'/'+Math.round(slova[2].getBoundingClientRect().bottom-r.top);}
+function rozmer(){
+  var r=box.getBoundingClientRect();
+  W=Math.round(r.width);H=Math.round(r.height);if(!W||!H)return;
+  dpr=Math.min(window.devicePixelRatio||1,2);
+  [cZ,cS,cM].forEach(function(c){c.width=Math.round(W*dpr);c.height=Math.round(H*dpr);});
+  var uzke=W<=1000,telefon=W<=560;
+  var yN=sokl.offsetTop,yG=sokl.offsetTop+sokl.offsetHeight,lh=Math.max(8,Math.round(H*.014));
+  rb=Math.max(7,Math.min(13,H*.0125));
+  I=telefon?{x:W*.86,y:H*.44}:{x:W*(uzke?.80:.765),y:H*(uzke?.115:.235)};
+  G={yN:yN,yG:yG,lh:lh,rb:rb,otisky:telefon?[[.93,.345,.5]]:uzke?[[.9,.30,.5],[.84,.45,.36],[.06,.5,.34]]:[[.925,.33,.55],[.605,.115,.34],[.31,.615,.36],[.885,.585,.5],[.045,.47,.3],[.965,.12,.3]]};
+  textura=platno(W*dpr,H*dpr);var x=textura.getContext('2d');x.scale(dpr,dpr);
+  zed(x,W,H,G,1974);zrnoPres(x,textura.width,textura.height);
+  vrstva=platno(W,H);xV=vrstva.getContext('2d');
+  // stín větve: pod hlavičkou, mimo menu
+  var lw=Math.round(telefon?W*.4:Math.min(W*.28,400)),lv=Math.round(lw*.78);
+  try{listi=listiStin(lw,lv,77,telefon?1:2);}catch(e){listi=null;}
+  listiY=telefon?58:Math.max(64,Math.round(H*.075));
+  // postavy: každé slovo má pod sebou svůj stín
+  postavy=[];
+  var fs=parseFloat(getComputedStyle(slova[0]).fontSize)||80,sb=slova.map(function(el){var s=el.getBoundingClientRect();return {l:s.left-r.left,r:s.right-r.left,b:s.bottom-r.top};});
+  var cil,stred;
+  if(telefon){var a1=sb[2].b+fs*.2,v1=Math.min(yG-a1,W*.74);cil=[yG-v1,yG-v1*.66,yG-v1*.44];stred=[.2,.61,.805];}
+  else if(uzke){var a0=sb[2].b+fs*.1,v=yG-a0;cil=[a0+v*.08,a0+v*.36,a0+v*.56];stred=[.19,.57,.84];}
+  else{cil=[sb[0].b+fs*.42,sb[1].b+fs*.5,sb[2].b+fs*.42];stred=[.14,.445,.735];}
+  ZDROJ.forEach(function(z,i){
+    var vis=z.nohy*(1-z.konec),s=Math.max(.05,(yG-cil[i])/vis),o=stin(z,s);
+    postavy.push({z:z,s:s,cx:W*stred[i],c:o.c,pad:o.pad});
+  });
+  zedT=-1;
+}
+
+/* stav úvodu v čase t (jediná časová osa): slunce klesá, stíny stoupají po zdi, přiletí míč */
+var T_LET=3.9,T_NARAZ=4.7,T_PRYC=5.8;
+function stav(t){
+  return {
+    zlato:smooth(t/4.6),
+    st:[inOut((t+.1)/4.3),inOut((t-.1)/4.3),inOut((t-.3)/4.3)],
+    text:smooth((t-.25)/.9),
+    let:t<T_LET?-1:t<T_NARAZ?(t-T_LET)/(T_NARAZ-T_LET):1,
+    odraz:t<T_NARAZ?-1:t<T_PRYC?(t-T_NARAZ)/(T_PRYC-T_NARAZ):2,
+    otisk:t>=T_NARAZ?1:0,
+    prach:t>=T_NARAZ?cl((t-T_NARAZ)/.9):-1,
+    znovu:smooth((t-5.3)/.7)
+  };
+}
+
+function kresli(t,dech){
+  tTed=t;if(!W||!textura){nouzove();return;}
+  var s=stav(t),x,i,p,lg,rg,dd=dech||0;
+
+  /* 1) zeď + nový otisk + obláček antuky */
+  if(!(dd&&zedT===t)){   // v klidu se zeď znovu nekreslí
+  x=xZ;x.setTransform(1,0,0,1,0,0);x.drawImage(textura,0,0);x.setTransform(dpr,0,0,dpr,0,0);
+  if(s.otisk){otisk(x,I.x,I.y,rb*1.18,.82,rng(31),26);}
+  if(s.prach>=0&&s.prach<1){var pr=s.prach,rr=rb*(1.6+pr*4.2);rg=x.createRadialGradient(I.x,I.y+pr*rb*2.2,0,I.x,I.y+pr*rb*2.2,rr);
+    rg.addColorStop(0,'rgba(206,112,62,'+(.34*(1-pr))+')');rg.addColorStop(1,'rgba(206,112,62,0)');x.fillStyle=rg;x.fillRect(I.x-rr,I.y-rr,rr*2,rr*4);}
+  zedT=t;}
+
+  /* 2) vrstva stínů (sjednocená, aby se překryvy nenásobily) */
+  x=xV;x.setTransform(1,0,0,1,0,0);x.clearRect(0,0,W,H);
+  var sk=SKOS+Math.sin(dd*.27)*.006;
+  for(i=0;i<postavy.length;i++){p=postavy[i];var z=p.z,e=s.st[i];
+    var cut=mix(z.start,z.konec,e)+Math.sin(dd*.39+i*1.7)*.004,yc=z.nohy*(1-cut)*p.s+p.pad,x0=-z.cx*p.s-p.pad;
+    // na zdi: zkosený nízkým sluncem
+    x.save();x.beginPath();x.rect(0,0,W,G.yG);x.clip();
+    x.translate(p.cx,G.yG);x.transform(1,0,-sk,1,0,0);x.drawImage(p.c,x0,-yc);x.restore();
+    // lom na hraně: pokračování po antuce směrem k hráči
+    x.save();x.beginPath();x.rect(0,G.yG,W,H-G.yG);x.clip();
+    x.translate(p.cx,G.yG);x.transform(1.06,0,-1.05,.62,0,0);x.drawImage(p.c,x0,-yc);x.restore();
+  }
+  // stín míče na zdi (sbíhá se s míčem v okamžiku nárazu)
+  var mic=null;
+  if(s.let>=0&&s.let<1)mic=drahaMice(s.let,false);else if(s.odraz>=0&&s.odraz<1)mic=drahaMice(s.odraz,true);
+  if(mic){var sr=rb*(1+mic.d*1.5);rg=x.createRadialGradient(mic.sx,mic.sy,sr*(.75-mic.d*.6),mic.sx,mic.sy,sr*(1+mic.d*.9));
+    var sa=.92*(1-mic.d*.72);rg.addColorStop(0,'rgba(158,134,128,'+sa+')');rg.addColorStop(1,'rgba(158,134,128,0)');x.fillStyle=rg;x.fillRect(mic.sx-sr*2.2,mic.sy-sr*2.2,sr*4.4,sr*4.4);}
+
+  /* 3) světlo (vrstva se násobí se zdí i s nápisem) */
+  x=xS;x.setTransform(dpr,0,0,dpr,0,0);x.globalAlpha=1;
+  var zl=s.zlato;
+  x.fillStyle='rgb(255,'+Math.round(mix(251,243,zl))+','+Math.round(mix(245,226,zl))+')';x.fillRect(0,0,W,H);
+  // dlouhý měkký přechod: světlo slábne od slunce doprava a dolů
+  var cxS=W*.2,cyS=H*mix(.18,.36,zl),rS=Math.max(W,H)*1.05;
+  rg=x.createRadialGradient(cxS,cyS,rS*.12,cxS,cyS,rS);rg.addColorStop(0,'rgba(150,104,72,0)');rg.addColorStop(.55,'rgba(150,110,84,'+mix(.03,.06,zl)+')');rg.addColorStop(1,'rgba(140,100,76,'+mix(.09,.2,zl)+')');
+  x.fillStyle=rg;x.fillRect(0,0,W,H);
+  x.globalAlpha=.9;x.drawImage(vrstva,0,0,W,H);
+  if(listi){x.globalAlpha=mix(.2,.6,zl);x.drawImage(listi,W-listi.width+Math.sin(dd*.5)*4,listiY+Math.cos(dd*.37)*2.5);}
+  x.globalAlpha=1;
+  lg=x.createLinearGradient(0,0,0,H*.07);lg.addColorStop(0,'rgba(90,70,70,.2)');lg.addColorStop(1,'rgba(90,70,70,0)');x.fillStyle=lg;x.fillRect(0,0,W,H*.07);
+  var vr=Math.max(W,H)*.9;rg=x.createRadialGradient(W*.46,H*.44,vr*.55,W*.46,H*.44,vr);rg.addColorStop(0,'rgba(66,44,34,0)');rg.addColorStop(1,'rgba(66,44,34,.13)');x.fillStyle=rg;x.fillRect(0,0,W,H);
+
+  /* 4) míč */
+  x=xM;x.setTransform(1,0,0,1,0,0);x.clearRect(0,0,cM.width,cM.height);x.setTransform(dpr,0,0,dpr,0,0);
+  if(mic){for(i=6;i>=0;i--){micKresli(x,mic.x-mic.vx*i*.42,mic.y-mic.vy*i*.42,mic.r*(1-i*.025),mic.d,i===0?1:.16*(1-i/8));}}
+
+  /* 5) texty na soklu */
+  soklText.style.opacity=soklAkce.style.opacity=s.text;
+  znovu.style.opacity=s.znovu;znovu.style.pointerEvents=s.znovu>.5?'auto':'none';
+  html.classList.remove('ceka');
+}
+
+/* míč letí od hráče ke zdi (perspektiva: velikost ~ 1/hloubka), odrazí se a padá zpět */
+function drahaMice(u,odraz){
+  var z0=odraz?.42:.4,z=odraz?1-(1-z0)*u:z0+(1-z0)*u,d=1-z;
+  var A=odraz?{x:W*.1,y:H*1.2}:{x:-W*.3,y:H*.95};
+  var pos=function(zz){var k2=(1/zz-1)/(1/z0-1);return {x:I.x+A.x*k2,y:I.y+A.y*k2-(odraz?0:Math.sin(Math.PI*k2)*H*.03)};};
+  var p=pos(z),z2=odraz?z+.012:z-.012,p2=pos(Math.max(.05,z2));
+  var dd=d/(1-z0);
+  return {x:p.x,y:p.y,r:rb/z,d:d,vx:p.x-p2.x,vy:p.y-p2.y,
+    sx:I.x+A.x*.14*dd+d*H*.3,sy:I.y+A.y*.14*dd+d*H*.085};
+}
+/* matná plsť, bez záře */
+function micKresli(x,cx,cy,r,d,a){
+  var g=x.createRadialGradient(cx-r*.3,cy-r*.34,r*.08,cx,cy,r);
+  g.addColorStop(0,'rgba(212,216,156,'+a+')');g.addColorStop(.55,'rgba(188,194,118,'+a+')');g.addColorStop(.92,'rgba(134,140,78,'+a+')');g.addColorStop(1,'rgba(120,126,70,0)');
+  x.fillStyle=g;x.beginPath();x.arc(cx,cy,r,0,6.283);x.fill();
+}
+
+/* řízení úvodu a klidového pohybu */
+function nouzove(){html.classList.remove('ceka');soklText.style.opacity=soklAkce.style.opacity=znovu.style.opacity=1;znovu.style.pointerEvents='auto';}
+function klidKrok(now){
+  raf=0;if(!klid)return;
+  if(now-t0>18000){klid=false;return;}          // po chvíli se scéna ustálí úplně
+  if(!videt||document.hidden)return;            // mimo obraz a ve skryté záložce smyčka neběží
+  if(now-tKlid>40){tKlid=now;kresli(D,(now-t0)/1000);}
+  raf=requestAnimationFrame(klidKrok);
+}
+function klidDal(){if(klid&&!bezi&&!raf&&videt&&!document.hidden)raf=requestAnimationFrame(klidKrok);}
+function konec(){cancelAnimationFrame(raf);raf=0;bezi=false;kresli(D);try{sessionStorage.setItem('satalice-uvod-04','1');}catch(e){}
+  if(!rm&&q===null){klid=true;t0=performance.now();klidDal();}}
+function krok(now){if(!bezi)return;var t=(now-t0)/1000;if(t>=D){konec();return;}kresli(t);raf=requestAnimationFrame(krok);}
+function prehraj(){if(!pripraveno)return;cancelAnimationFrame(raf);klid=false;bezi=true;t0=performance.now();kresli(0);raf=requestAnimationFrame(krok);}
+
+function start(){
+  if(pripraveno)return;pripraveno=true;
+  try{
+    rozmer();posl=klic();
+    if(q==='konec'||rm)kresli(D);
+    else if(q!==null&&q!==''&&!isNaN(parseFloat(q)))kresli(Math.max(0,Math.min(D,parseFloat(q.replace(',','.')))));
+    else if(byl||q!==null)konec();
+    else prehraj();
+  }catch(e){nouzove();}
+  try{sekce();}catch(e){}
+}
+var ceka=2;function hotovo(){if(--ceka<=0)start();}
+podani.onload=podani.onerror=hotovo;podani.src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYoAAAJTCAQAAAC8rpnhAAAjpklEQVR42u2d+3EbybnFz2o3AVfdEHovHYJvBq2SQmmWFEqzxBTsCJolpLCOYFhCCnYKvH8QIKZnBsAMMI9+/A7KVbb5ENGY09/7fBIAAIDCYOb9db9xoiBTIlgZGRk9SHqVtNdOO+05GlAnIbzezrwa+bktBwCpw54lxOnlOCZQD9wISrzpTZ6jAlCi+wocF8BxghYAShBbACgx/WWn/1O/c9ogC/y68ef+ox2HB0qEv9FOvOmNqgVQkcW6tztek5OznzhxkEE8sd1PA5AkmrssxeQcFJYCpG8nHtbtooUUQMlXsVcGpAAAUgAxhAQpQOVzdXtIAcrCHlIAMDd2kAJgKdp4wVIASHGXnQAgh0D7voo2DYFA9MjeOX2H+wSKC5Rnzl0BoLJaAg2WAmAr2njCUgDGjFDzAATbE10nclFA9Wo+mYHfEbAfoCSEO2ft7D2yNwDk7EKFQRfJUs4DKnQKL1xR7jAjAnUAiosuwoB18BedomZKTuoPzhgot5rFTkZOVvvD5qL9lWpELH1A5QKAnmVp1MgjvgxI5o7Wg6LNA9SrL4gjBUSDyNuYLBSWAqhaKTXqFUCU+5jJAyyNvKWHljoFSDU8ttpLh0rELZT4IWbyQKHhsV2oS4o6BcjY9fGLtJkTUYCsC2529im9hkMGueH2wdKwzCY8ANIixXhbYVk7D1SJqE2YeT6P6Tug/IdPzayT3AAUIH/mZhRNaxBDAypAa9yMSOQ+zCGuBimAClkxb67WsEdWsyEFyAUPV2xFmEt2GVKAfFa1mFlcJ/qegMpp+jY3d8ROqmZjKUD+i77shGhihJ2AFECZb9Q2+qlZhf0hBcjf0WK7EVCNvU/nWjMCqyFBzRocbhZKvLHeC6iYQp1Rd5XwF92ybB5SgGJCahslYX9NqkxMiCggBVBGNW33oTv+g+MAYmvRYWKuuWPVPJMUQPXtzZ4h94T7BFKMKB62/OchBVB2TeKQAkCKGfFC9gnk6Dx90ZLLwcTOu3s+nOPr3ct9iTLd+8ML5GQnXvXMAd9GBjc68RfQD1JOmSfSsTcRwt9w1J7DXmXz0L2vwPFq5sXl1w4cYqROCrpjJxKimeUm4tjTJQWO7qTALsx49Aj3pkkKVMY3IsTx+LEX6ZFignP7W+ULpL6NTuXtP5qOv+lVutKI8EjqT7c3A35ZoGT3lYOdT53ay0U3v//wTa3Chd+CB7v0J0OIvYHTFDp0eKeE7wzMm7O/i2xUKqTggtL9SwK9rOzA7eIiStirvxFaaKEljlQnZg3jmisH6D/IYDs3jG1RIv7a+Qo40Oz7r3GdFl0veNnM2ujRN1Gy1UcfojubNSFBO/+nhOu02g3kDw/36btNZB3ahbl2rHH6DosLpeU0n3CdVvZUjy6TOTzCphVRGDmZKIJoRxYmOnZL0SipSgVnfzMlbKdd3PZu9xAdb7s4Fzd2DLcT4kJtZSmw0jd1vva7lWzvMK2C3Md3tpvFfeRwvVsNR6iXSP6Jy0i35L2HtUlNJ7oIh+giHBypNlnij9Kc+ff4eNYnBWd+AyWGO1qPsYNtPeJtZymcXSd1ah032IrN809EEzfcOX5QpNFGIbTv2Yx2hiqen/DRb8RWbB1VkIidbCVc72ZyvUrE8ee7VuT9u+LvjR0pLz/wL4P1Wj2gxN2UONLCDwTop//3ZAtMxy7EaVknJzvgAJAJWYsUWOXJjpM96HP0P4auS/UeTTiFni0IrUjDdMp67sz4PWWkdUJtznnyoZrDo9u9t53sIYroVyBMp07x7kYd07ExJfzZv4DQbx1SkNK4iRLHvib1+prMR9wQ56ZCy2Fyrf8WLkQWlo9rA/eJM55Eiaa3B8d9NHfErpHrZJbe/5c7fNclN+pyswLh39LZJyihKTnuoblp8+EI2Y4YV6Oh+oOVjyxI/NN9iRuiCq3a/UQqQ9P05cyFGTw/EF0cH37fSbaemjzaealuPWPYBSCq0IITFdjhia6TufgT8Qyd+3CGbK8H1n+kZuOvDFsBR61itTAbKzzRdbIXAzrTooLrDBK1f/YURlv56NZ/d8PcCFJg4JeKKDjZSa6Tv7B182QjnFwvVPYKH5GCiaISryayLuaQzzJXKIqJX6bzCTsxKY0XLqyjjeOAbsv4yU1ynWqEP/w/vvdbQqeVnFrrOhEFl82Eowxn5ytMr9PpvaXDDtQcXESXuPGj3UJ4LADas24AN9oyUvw4T6OTeM0VQWX1xAdO93/bWTKtRnLTizr6FuhkLyDFOulYMDpfYVtT10Oy+26wpc8dWvriavepptFVCwwDYpzHsBtSkHlKKjRznRJdX9TsVIMInUf9bWCerutGnfQ+QmRVfCt9S/lujQYPnCeNS+ENO0dHCjUte2F64XFoPeg+Ssq2dWVtK/44fTC+1fZhIQWZp5QMrhkcI9JAvNDNCYWPUaL+3F27w9ZFduc9I9WtVgSyT4tXKDjTkYGZP5tz6ipw2I8HWgMJ1tARvznVL2xPDM13Ro+G8ih8gPPPZuM8jbITzYBa+Gliznce23aa1XRmtF3UBdt2m07tIL71uyDF2vEEztNIO2EGx4iGC3Q2Cr3bFiAc9mcf3SnTccPe07SxHLPruWIUmZZNxkKKUXbCDwbXQ5pO3UnrJpI5s1H61g5UKdT6iWNS10bEovIqemNTuFuGpfPbRbX3+7xbvntvIneDhHobVPswLcmbeNjInfnr8H8181J5xopG+KB+MLjuSlzaThB9ykl5uQHlv2M6dqjD9t1pcgO5LhQ9lg6ycZ5G2Qnb+56T6KU6g6Q6M18X3z+nFGzo9UoN/8QxV8U8xdJT2SQuRsQT4Yyv6jtfiafr4jkK29lmFH/FtiKQ9rS3H7ACgXuNAdTtza09WxIKA+JlR+8/fsBDK+eknhjB0T7EYjgamPRGuGB5SRsw0k4M55zat3x3NqLpJWJP6oDtpo12/doOlPt8bz6De00Lqncw8z46njCdh9N3Htqu6sbbmURsbF/ac3VthVnTEzZgGHUtO0FEMeIYhzTAXUeurOk8mv6QnrW9mz4c8lA20og6Fu2O1PK9TUbh7JYK0ofzqjxxyVzNVfTX+5oBgTIfPcannJTrSWP6QbWPUzzyLlbQ3Xl00gHBA9aiK4JxnkYE2RpIxoYelRS1ijedkps9m43SwFaKpvOv2lY2ypFTX3jtI+c5urmjSx03UHE4+v5+oNPJHILyuCpuO1I4/U146mh5NOSeFpZS5jx1rSHADnjs7lBBGGr6sBGRXJRNeouyU22Hyg9uwrNRY/mwJcPYz70emAjtykGGg9MyNFZkP5ymrrxyGOx0Ci1Vp242yg8MqXbnK1jvtYadwHm6epCu1+mkaDKi26JxtBrh0P4dj6IeO2Ztz/myH/1OviebZq62s4P57ASXzNXMk+lVGlxHYiBEobOPHB0zWKcIAzqy3ZVfJ5tkonoI/u/Sq1k40RHOUyxSYDp3fDtY7io3tcXNugqBfmA9cHeq20Q1ETOQdW+wEzPbCSzvZNli15EoC2qnXWMXy3900toOWWzLTermqWzrt8SOkxvdpgjYa7eK83RyZ4Y7neLWjXbwHWs9udZEXTxk6lrxixtoAxSmXssvkIcUVx66ZkCe4DRn53raHadHvLvC0Q/2M5mWLYqtiesoRpGMXWt9PNfMFT/U94zy0IPenoF4jy5iYRvbaudrOnqBx6k703nATTR5IYp2q7hORBQjjK7tFezOzVG056ib1tHGCh2hU4Y7Ce53CdBtGhmW2wHzhtg4TyNumLYuk+1tNTWtrlXbUYg9dbqe215kovxT34LEzYMWQ7/wQmBqFKOOsxl8TNuP6rAA5kkp1kVds77TIWsiCYRwdqDoXZMWO7F0iE3L+AhShDPL3W3HcWrOyC27zve1Kw5+YCLPf9Q8xjgE2AnNJGVDRDHhQIemKIaCZd9qDAxnfiaem3iLVGXtRXmc4dsP31ezTU9wqhMCtCENDdtzlmyroh0Gbpr3n/GdubuTSIHvyeO4EbcfZn7uEJuIYtQtYwZdrHCmENcNls2V4p0f2FXkD/WPWM+DG22NEJurZlTuaegusq0HubsZO0R1jNjBcgN77UxvUMn11Acdw5IrhdhEFCNI0Qx+T1u4zPdqDsev2Kie7S6sB47rGN2qiFn4PjODj4HNMoi/305gf6+G2WGAEu0kajMoUvBeibZn1kA20YJIHwXjYXDL6pIf3fuKsNAbYzIZ3plz2AkiCl3rlwlX7s9wtpu1iaSXjTRImNAZVDIj2xXMrI9S85FpO1+tr8NOEFGMnqQwHzJooWc1Ti6R7bhYx6/4ThX8FEx3RdX6OSe3SnXCtt5vnBpwFaViiShGmt92sc50epNsa/gnDKRoh77S1h5vOjks38s5udW8XjfwWLisHhIzCyVWSl/8UQhhdmq00z5yd74OBqtW0u7w3/f6or3M4eecdh9f2Wmvnaz22h96qr5KepaR017Pkqx+DP4l3296ZKzM4e94/8+u8+6e9O2D0l8Pf/v7u3nOxE7M8ymDCZbCdFanhFbE4KNVj92+WdMq7vUXB7/3RnU7Z93Zm89Ofk/+zJ3oW3PmcY7LtixFqCbEJqLQ1H0ULqpKtBeqhGiRfDuCiPtcw5nWQjPouzd3u0521ExBaLl68aMRMqqHNDORAozIXoTeFIU9dL5qMOf01hlBUrTu1wx+xR1eY/IoZqGw00U/4SIf3VYSYlOjGEmKprM7oiuW2R0Lcq39133L4D9KeP1w3UaTFfcZd3vDzela68KaiBSuilQsNYoJRthEHUzH5otjHGEGCnvvq7i6Vet+s0eXOuajgHff3LC/OfMSWu/aZ3N/+pkoQSO+xo66m8GNpV2t2G7X0ltHKDn+NzTofJ2vX4+/xexM3nWTjVNhZqMENYrRx+s6t5JtUSDWCI9lauxgwS8c6h32zHp6f5e362d8QIbcNnNomrcFxhO0WE5I64VBqX37sf/O9xo2bLS48Zwb5XrNf+c/4LCqZz1ECtf57SERYsxpJ4goJtw5fU0O09kvEW8cCmd0m0wn5/TWc53uMevLUeIt+t3h0LmbhqsRFrCHYMRD6T6Kd+cigXbDRuh0OrlBATQNBOP3UMIvSIl0Q1E763sDEx6s0FuuYnubKGyvqHe0GSdR/r58zWnPdriLEm4lSvjEQtEG52m71F7bXXADioHm8PD7AQnlo/KsOVPPdhcf6VSsxLEpxBRrJ3CeJt47w5sn+sF3XLW2valrDeSc7IUH0VwNM9dxm9KU+vc4T1sK8jYfs9V9NaY4Zjju0XZRsra9B8l2KNGcddrMDJ1NcwXa9tBnW2Z9AufpJmPsB5s6NBh8dzuZXKfTdkwsEK7EEGE1QqQaaDucp+091KGilRvUBIzr2d3BpPZe7emU8JvR4WQ1bXFBNs7TzR5qf1OEzmyVOAkRuF6m6joFwwWXIehNfkXHKdV71eI8KYkykD9DCdPZUWFam4jc4Aca7viAjuvpt6WFKSrIxnm6ozbqB8dPY60O2/p6iKhznRBjfXYzs/OQHy2aWR1CcFfDgOvJYXZXB8ckcB+1CnuVEOMftLA5JbZ1OWzBVfrEE3zDQa2PKNEdPzIDH6AZZe7DSEqYJCixbXDqinIFs8o9ubN9s2ZAQLlLkHbE4We7d00ihNj2hg2z1mDAhMDt0hTcUBeQubnibEdTokmIFFv54gbnabu753rq1J2xDseFj+NuKrPJDXk7FU6lQ1tARIHzpPEtHn6U/9ocmuWOr6Aw6dG1GzkN9/ZBhQ2DbY/ztNXdYxdvzJ7WiO2TcZrMx98Tsk/HUqGYlM0wi84rTB3ndAnFEnZwn1OOEQUViptE0NLIjNuEKBGvr8w7HUuQPenucYvVB8INoV2TFClCMQ0eBNmT7mGzyEjPbRoYLilKbN1T6mkD3FpWeb5JhnDjvWSSo8SWbgfSZ5tFFPaKZZmWeA13zaz5BEmx3QPlSMZuVaMwswW/zZ23qkmSEtulMj3J2G3unjBbW55LbG4g9x5ZQzyRpvM09lF1CQ5d5u5AeeKJrZyn+23EXKJhLllKbHPXNtiJLZcE3x5JuBlvoXD4iwK2YtYSJnZi4l1s77i5/QJWLCTTCrjtfWuwE1tFFM3NblOY/f6xh9yVwYEi77Sl8+RvMt3LaCEdFWc9wfaMrhNNgJOP2txwS4XF/rrUM1AuAUnTLJ2nT0lbihiv2g+6Td8u/I5HfV3or9sd/v2HbM5vOdcJbJbicxPDO5+dckWOdW1UY5Nyni5RYi15+pRJYbKbyCaimJh58hOaCnymY/r5PWAN2h3p2AmbiO62r7qmHQrTwFVeUxRhpNMSMhb+yi335AqS+lSOPU921IPoM9fXzmks1RQ1Maj82juaUZTYInMREg6083rnxBMTwzd/9aPYahliqDQl64qSW8g4yDYX1jKWobCdy91rilszk20ytknQ8JqESRGyiaQIsSc/ZuaCo7L9Dum36qIKi51IIRl7znHanhImaVLYLK4B7MTkh8yeXfEeMlhlXF4Bz2EnUpA+SzmFl7aleMvgEiDvNNsjZjNbUVlKU2AocOt39ivk0ztIW5F8gS1mCVlxdsIk2JISEq1Y2CTFCRIPsj8l1dwxBn8OzN9tiydJ0k4vxdvx+acMn7EF95tmk6SF83KJVrdd0rV7nKcZXCeT9Dy0STCuMEmnnqlQ3O2tmgysXVMkKUxhKwMyiCmMwlVv9SXBWKKPfQZ/Yzp6HS+FnpbWyX032VQ9XYHFO1fYFo0iAuwmq0aAlByoJumafbL4tPnN+vPq93zNyszuknLn0pU6e8Ie3H4LmezeUyhoosIVt5cveUtx/Rb6nF0wVlawvVTbJUH2zZ1OruAyZA6WwtdoJ9LO04SClpLlOE/hspXfKZYSTca3iSugycMVuOc7+xZxU0UTfKo9sjZjmbYsM06+goMzSdQrbJJREbJnNx64rcBBTJUUvsAd35PwxwakGJOw23F7bFK8c3IL72bKIBn7x+r35zfVMXpilKNj+yWLKnuFUxO2SD3c1NsBXaFL75V/P2wpYZjNqnS3XmsKmacbArimmjpMOqU7V9xyysIy97YysZ6tSbFu+yJ24obbyFUn6rZtPcAXuIevsIekqewK2NZVcYUuMU44JWtltJfRXjuZkWbzu8opUEqfpREDVNskP9dJvqo3VrQny3S8/0N1ptVd3Kmx9SiqLXZfa+aJ17JDMJOAG+UTSwE09DZNPTDDWawSUYSil90XFWRarGbhlKi8QtGQvd7YWQln7K7PXGynKofBQopZ3ZT0KFF1kH1LfdQX70yGzQmxdeWkqbMN0MiSdTpzTTj5VXpmbbLtiVUG2ZbDunA2fqW7+pydMJuLd1qCayixXSnPDzyAPnudworsRKjohNaUM/CJ9WGFGiMKzxRWYnWLk8PiilxcrPS1ZM2iIgZgOh70U15GXj8S+Gtea2wEDJR0sl3qQuEuOdXxh+psRY3N0/vaSGHV3NWZj1ocpFCNE3UE26k05dHisYKl8AmvBeHeTAXPwk7QEJjJShfsxAKWwq2oLguwjJXJuBhKncW+TD2WwiBshV1UoQsfP93oOP2aVbDdVGQnHqoiRZYrFW4jxQ+B2yjxTUQURZKCwBhKQAqOTmutqykLT5CiqmBsctT0g3RsyaTYc3STHc5fokYhxk+paNdaw85+svJTAjfAvnDH6afqxK4uUhhIofFdsXXitS5S2FkLUE+FU+JBtdqJqiIKhHdFn9NV4YSq5mQ8DWOMEzEMsGTmqeHyKO6VvcjdJzJPon6tWUux3+sjxTOkGJGKqLdlsoB1np9uyCo86gVSXLQSP6ulxGO9G1DNbEGkKY4QTbWxROX7iuaiRVOUy1Q3IapfCjxXfiUUYx9C5XSAEq3bMVTuPpmKU69sK1rIXriqrwRUO6BFQYfpoAHbirRYlTuQYaKxQ2xdyNZW4DCdewHN2/zm6WYiyEZEM8dwGxuB87TyJLKBEtSxoUVOBhjHiYjirmVfpdkKg5UgHXvvI9QUdbTUIwizN61aeChBzxOxRdoulOWBrzP39LuWEEv8m/5x00/+0r8TcgT/4n7TGH2n7xzCslULQxKWMFtFqo7vbx5YdclQ4gt3W60DxZ8S2538LQlaeCiB6Gla7ochwCbMLnNpy/6Oe3rrRCwAybUIemoTTNzhQKVilA2POc2AnxJd2vET1wmUSIpnvWa27MRWqwBL7mm17aj32Iovq0cWtmK5S0ixGinuE2P+tnJkQbcnWIEU+zulmH+uRgsjX+0iLrDycvl7hft/rpLyMwpEE7hPymbzUbM4LahgU6WI8FsW4eufi95IDY5Tws9Pge6TtJthxcuSITCxhO5Y5UVMsVFcsVx6lliCiEI5D+wEupyYzi7HUsyzPHJea2EVKl7WiKUoaPu2m4kQiJvRDKhyNPbCnUlApM1QBlQZAsxz1S2IIpAsSCamuL/h44QH+ZtoYYgiiCjSIsV9HbPdkPvX5J4oq1+IEYDUSPE862+b1ioYaArHUqRICulxZlo4BGsgRe6k2M38+36MoIVVQ80aqKp9QA4ZAjpkc7YU89uKy9bC6hf3EFAlle3r1oIiHZYiE0uxhK2QfvQyUY4ErJaX4CfQVoqJ2aGhVYp0+V5vlZJir6eFQvgTJbARICtSaKG9Nw8Kkox+MUdHlSI/UsxdxNNH80cg2wQplO3gOU3H+eNPAu158cQzJXJPkELL56AAzlPGpNiXKo4CIAW2AkAKpSSRBnCfiiJF0RVRACkghWjygBTzGOBHni3cJ1G8E0U8UbrDUmj1hg8gSnf5kuKZ2jbOE6SgXgEgxUbzFUDknnIlxVLzFQBkTArCbWIKSEFcASDFdXzmg8BSQIpu4Ea4LaoUkAIXCjsBKeiEghSQYqqtyGvC4rFalw9S4EIN+NSP+lPP1Ta/syh4VbgMlh+6RVcLIKwMtNRq4bdF1M1NT+wfUoh5Cq2w2CU9LdgX7bQbdBua6mQ6X/X30t/iH8n9RV+Te9AezxDi3b+ujRR7Ktrb0CIdPOnPC5Rg0hxLsdpd9HnjFb8v2stI+n71XoQUYDVsFcJ6uYmL62vLQDkshTbrhvosv6q//qrni44SWXsd1uIQU2xIi696XTGY/rueb3rAKWVBilVji68rtFK86LN+u6OaDilwn1amxXdJ3xYLpt/dpT0pSpAbwgLNGlZp7wZP9+WxFEqibjFflftFO+1nTqTuqirg7SFFKrTwdzpRrx+NGrg7oAhSSN9lbrYWT9otWmSDZpBCW01bfLnJOuxwKHi3pZJip0f9mJBXogEDFE+K98m8H1fIsL+pKs3dybtVyvMUujKEZDu5nlftpE3IoCqnKn4TliK5gFuycpJ22sskMtddz1TFqwDIfoiWYVSV1PuEn42lgBRiX0P69CfQBoTa9T0xWAocKNwnSIEDBfkhBQ+LGEbFQ9wCb2KtPJYCKG4yqeNdIoYGiCqEcAGAFJACzBVq0xcEKUCFtoKULACqMCULKXhgsBSQAvcJQApuUQApcJ8ApMBSAEiBpdBWy3QgBeCBifDAjDbAfcJ9ArhPUJ95ivko8UtM4GApQIXOk4UUAOepOvJDCkgBIAWkAJACQH5Iga8NKSAFAJACAEihDEaMXnGfIAWocfIOUgBIgfsERP4JUoD5SPGE+yR6HkGFnbLF645jKea1FS8cAqQANHpACnDxcfnCIUAKoGjJvBgzghTgBFeJncB9AqMfFcshQAoQOxVfCLQhBahOO0+S9CCKd4Cynaoq32EpcCl4t5CCx4R3CykApIAUAFJACjFgBCkgBRBbKiAFdyfvF1KI0h2kgBSQAlJAChXTH/vAJQApQM12ovBQG1IwR4EDBSlmtxI/RL4NUoDWo/ETlxFSgDZ+cQSQAsTRRL34Uq4DBSnucZ1+UMWHFEDVCdpUGFVAitsp8YV+L0gB2rfkN9zHUmkBKXCdRFUbUoheJxyoS/idT/YG/MURSJLe9C8sBaiz/e8cnnGfAGjjsdTJdEgBbsNrqXYCUoDb8KKv5b65P/h8wQ2O07NoCASgFkpgKcAUPGmnfekLgyGFKFlNiCO+i3kKIOoUAIygxFu1L8fHD/oIFVPiTW91NELS+zTFRgT9X+Vn8A/9rTKFdXAhuK7dRlRkLbAU42zEX/pfjuHDWvxH/+YYVPn0BNah+0JLtnJK/OAQEFgGiGIKMTRwLrwmM89+CtCxE184BFWmDwgpkMXEVkCKSXYCzY5LFwZiaNyFoONABXSfIAVQRwwtlJmahRSQ4h5a/Cwx7oIU4D78KK8XClKAe/GtNGsBKcAc1sJACgBUrgo7pACaJUFrIQUAKrVvFlKcx54jUJUJbEhBnQJACo3V7aBDFlIAtdvdoES1ziakYAQVUkAKXc+5QwlIASJ9JzZk64a9RntUx0ulxC8O4UY7gaWgWQGI7FMVdoKM063YQQrRqADKrf5DCkghdE8gBdACXbIeUgCgUufvIAXAhYIUQEtpe1hIUZ5fDESqAlKIwh2k6OI3PklJNHjMhT9LqFhgKbAToogHKYYoQTyBAwUp1E4l0iwOKYgpiCa01FzF37EURBNAUa3CQAqiCVCcA/Wp8g+QaAJSEFNEaNhqtwA+5z5y9KlquTMosYxLarAUQtsJlPRc/a5aE7E/eXIXxH/0bxiNUiwo5sn6hFIsEFmo6t0nq3/yzC6Ov+lfGDmRiAUqIjX7qULXCUrgQGEpsBNi5AhLgZ3AVkAKVAARvRHZJ8aJ0sf/5FnE+1SVlaCxA8sMKcoVAVYuWloWUqR8Z1HF5iqCFGo3AGIntjp5SEG3E1DmCrO/V3Jb0e2kDdvId1gKciBA0eYKAynSA6lY4gqxR7u8VOyrdtrJZElww72Q2gfylv0rtBxAI5/h3w+UlrZE3oQY0sYwCpm9C4CdmO3lzr6vUMT7ANpCoCBnSthibCCKvdiJWfxwMyKFkMu7aQi2sRPruBs5OVHUipRGya5Mtyl+jw1RhSjeFV+feJzQFrHTM10FkKL0FsDHiY/5To84BUAjVTvyrEqUGzsRapN3uilHU/K7dbhPeLDT8V23bq9+ogNKiKFdQY6NBS/6WvQ7vu/9YSkqtBOvN9sJHZRbhYgBpDiPHBeyPN8pMbnTC6EkpCjJTrzMUG/4zicDKUoixRwP9D75igVJ2Q2D7DqqEzmmZi2WQjR3jMDTbI7PXq9YcUhRgon+Pmu4DilA9pVsX5nzaLEUOE+6mkrVzA2FSlyTRFS0xfIurVvlTfsMfsNSrO2xPlRVxc4xrsB94sAv4usiixKfBSBFppmnp8V2hz7xGYE8M091TqcHLAXOkzbIEu25IYGyE7QJFZ+FwVJoxX59ZdQonvfvLzqq+ITzpC2qE7vFS4KvkAJSGOzEopVySIGlyNpOpO1AkZRFInOzQDMUJuSDpSjWTjxVnzB9gBSQYiu3BgeqalLk0wj4uKKdSFffA1JgJ2bV7NCkmb4nSDEdv6uEZOw/lUt58b+r/nv/1V5v+ofSk5b4F5aCFN+7nVg/xN7ru/7UE0JpYilwkolIu/HV4RNK0hrGUbVwPj6HrqfPCdSYzeG1l9Fee0lGOzl9S341DchkiqKZcPMGSp+sEC6/YdwfHqcw0/pfbayCwqgRdmLGm87KX1wm1ojIjGVfBd9w542/lRskRz5r1QOkKCHQNvql1LRfjazM4SPfKweBfG2iGEWoXdAGVCd6jQm18YIrocS6Z0qoXUiI7So4VU9UQYjN3bZVwG3pfcq9M/Y1q5BZGcxhsKsiczvRVGXsHZaXeAJKbEGLhgd5TrMbVo4lDEIQhNqYdoy8I5vHDYbjpNVrFhTwsizXGToGsMIpB9cBShRnl4kqMlMAxONdvpAHKbLqcsLffbfPDRcPVgJKrHn6RBU3pgYbKFGwnQYZBNfcXuvaCjqgkm1jhhJbhduOLtkplHAb5CZe9BUOaM2tSAZSTGss/kJ7OKSAFCdKmNV16171lQ3UGlakRYu2ymgiUEjaKNgGieac6O3XZolZ8k9J1q+hxJaDXVS1E1TpwHHSpolZT6B93U5o9SQs4XXe6+oLJ4VdOQ1LXWJKDgqofCFMepxS+HQCluKy6/SwYlXiM6U6HKgh/JGU6/SNQh3AUmyjGAclsBSiQZlIQsmmyxssxdZ24olIQrfnnx7JapVXssNKpGfPmWDRlq0dHL8STMsm96n8PwL5hPMQMuZeAAAAAElFTkSuQmCC';
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(hotovo,hotovo);else hotovo();
+setTimeout(start,2600);
+
+function preskoc(e){if(bezi&&!(e.target&&e.target.closest&&e.target.closest('#znovu')))konec();}
+window.addEventListener('pointerdown',preskoc,{passive:true});
+window.addEventListener('keydown',preskoc);
+znovu.addEventListener('click',function(){prehraj();});
+document.addEventListener('visibilitychange',function(){if(document.hidden&&bezi)konec();klidDal();});
+if('IntersectionObserver' in window){new IntersectionObserver(function(z){videt=z[0].isIntersecting;html.classList.toggle('mimo',!videt);if(!videt&&bezi)konec();klidDal();},{threshold:0}).observe(box);}
+
+/* přestavba textur jen při skutečné změně rozměrů (telefon posílá resize i při schování adresního řádku) */
+function znovuVse(){if(!pripraveno)return;var kl=klic();if(kl===posl)return;posl=kl;try{var b=bezi,t=b?(performance.now()-t0)/1000:tTed;rozmer();kresli(Math.min(D,t));}catch(e){nouzove();}}
+var tR=0;
+window.addEventListener('resize',function(){clearTimeout(tR);tR=setTimeout(znovuVse,140);});
+window.addEventListener('load',function(){if(pripraveno&&!bezi)znovuVse();});
+if('ResizeObserver' in window){var sv=0;new ResizeObserver(function(){var h=sokl.offsetHeight;if(pripraveno&&sv&&Math.abs(h-sv)>1)znovuVse();sv=h;}).observe(sokl);}
+
+/* zrno pro sekce (kreslené, bez obrázků) */
+try{html.style.setProperty('--zrno','url('+zrnoTile().toDataURL('image/png')+')');}catch(e){}
+
+/* otisk míče zblízka: nepravidelný okraj, zrno antuky, světlejší střed, stopa plsti */
+function otiskVelky(seed){
+  var S=176,c=platno(S,S),x=c.getContext('2d'),r=rng(seed),i,n=48,R=56,an,rad,s,f1=r()*6.283,f2=r()*6.283,kr=[];
+  x.translate(S/2,S/2);x.rotate(r()*6.283);x.scale(1,.88+r()*.1);
+  for(i=0;i<n;i++){an=i/n*6.283;kr.push(R*(1+.05*Math.sin(an*3+f1)+.035*Math.sin(an*7+f2)+(r()-.5)*.045));}
+  x.beginPath();for(i=0;i<=n;i++){an=i/n*6.283;rad=kr[i%n];if(i)x.lineTo(Math.cos(an)*rad,Math.sin(an)*rad);else x.moveTo(Math.cos(an)*rad,Math.sin(an)*rad);}x.closePath();
+  var g=x.createRadialGradient(R*.12,-R*.1,R*.08,0,0,R*1.05);
+  g.addColorStop(0,'rgba(216,132,84,.3)');g.addColorStop(.45,'rgba(206,112,62,.56)');g.addColorStop(.8,'rgba(192,90,42,.9)');g.addColorStop(1,'rgba(186,86,40,.66)');
+  x.fillStyle=g;x.fill();
+  for(i=0;i<1700;i++){an=r()*6.283;rad=Math.pow(r(),.55)*R*1.1;s=.5+r()*1.7;x.fillStyle=r()<.6?'rgba(168,70,28,'+(.14+r()*.44)+')':'rgba(240,164,116,'+(.1+r()*.3)+')';x.fillRect(Math.cos(an)*rad,Math.sin(an)*rad,s,s);}
+  x.globalCompositeOperation='destination-out';x.lineCap='round';
+  var smer=(r()-.5)*.7;
+  for(i=0;i<230;i++){var px=(r()-.5)*R*2.1,py=(r()-.5)*R*2.1,l=4+r()*11;x.strokeStyle='rgba(0,0,0,'+(.1+r()*.42)+')';x.lineWidth=.6+r()*1.2;x.beginPath();x.moveTo(px,py);x.lineTo(px+l,py+l*(smer+(r()-.5)*.3));x.stroke();}
+  for(i=0;i<800;i++){an=r()*6.283;rad=(.6+Math.pow(r(),.8)*.46)*R;s=.6+r()*2.3;x.fillStyle='rgba(0,0,0,'+(.15+r()*.55)+')';x.fillRect(Math.cos(an)*rad,Math.sin(an)*rad,s,s);}
+  x.globalCompositeOperation='source-over';
+  for(i=0;i<80;i++){an=.6+(r()-.5)*1.7;rad=R*(1.03+Math.pow(r(),2)*.4);s=.6+r()*1.9;x.fillStyle='rgba(188,88,42,'+(.2+r()*.5)+')';x.fillRect(Math.cos(an)*rad,Math.sin(an)*rad,s,s);}
+  return c;
+}
+/* stíny v sekcích: stejné postavy a stejné rozmazání jako na titulce */
+function sekce(){
+  var kes={},k;
+  [].forEach.call(document.querySelectorAll('canvas.stin'),function(c){
+    var i=+c.getAttribute('data-fig')||0,z=ZDROJ[i],v=parseFloat(getComputedStyle(c).height)||200,s=Math.min(.6,v*1.6/z.nohy),kl=i+'@'+Math.round(s*500),o=kes[kl]||(kes[kl]=stin(z,s));
+    c.width=o.c.width;c.height=Math.min(o.c.height,o.pad+Math.ceil(z.nohy*s));c.getContext('2d').drawImage(o.c,0,0);
+  });
+  var lc=document.querySelector('canvas.listi');
+  if(lc){lc.width=620;lc.height=484;lc.getContext('2d').drawImage(listiStin(620,484,12,2),0,0);}
+  for(k=1;k<=4;k++)html.style.setProperty('--otisk'+k,'url('+otiskVelky(1900+k*37).toDataURL('image/png')+')');
+}
+
+/* mobilní menu */
+var burger=document.getElementById('burger'),panel=document.getElementById('panel');
+function menu(o){html.classList.toggle('otevrene',o);html.classList.toggle('zamek',o);burger.setAttribute('aria-expanded',o?'true':'false');burger.setAttribute('aria-label',o?'Zavřít menu':'Otevřít menu');}
+burger.addEventListener('click',function(e){e.stopPropagation();menu(!html.classList.contains('otevrene'));});
+panel.addEventListener('click',function(e){if(e.target.closest('a'))menu(false);});
+window.addEventListener('keydown',function(e){if(e.key==='Escape')menu(false);});
+window.addEventListener('resize',function(){if(window.innerWidth>1000)menu(false);});
+
+/* fotky pod titulkou se nestahují s první obrazovkou; chvíli po načtení se dotáhnou na pozadí */
+window.addEventListener('load',function(){setTimeout(function(){[].forEach.call(document.querySelectorAll('img[loading="lazy"]'),function(i){i.loading='eager';});},2500);});
+
+/* odkrývání při posunu */
+var rv=[].slice.call(document.querySelectorAll('.rv'));
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(zz){zz.forEach(function(z){if(z.isIntersecting){z.target.classList.add('in');io.unobserve(z.target);}});},{threshold:0,rootMargin:'0px 0px -6% 0px'});rv.forEach(function(el){io.observe(el);});}
+else rv.forEach(function(el){el.classList.add('in');});
+})();
+</script>
+</body>
+</html>
